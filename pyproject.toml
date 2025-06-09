@@ -1,0 +1,17 @@
+[project]
+name = "sx-data-dictionary"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "c3us-dev", email = "ccorbridge@ceeus.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+sx-data-dictionary = "sx_data_dictionary:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
