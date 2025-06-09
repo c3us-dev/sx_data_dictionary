@@ -1,5 +1,11 @@
 # input data
-data/
+data/*
+!data/chm/
+!data/htm/
+data/chm/*
+data/htm/*
+!data/chm/.gitkeep
+!data/htm/.gitkeep
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
