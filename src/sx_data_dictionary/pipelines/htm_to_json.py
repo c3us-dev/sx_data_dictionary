@@ -1,15 +1,14 @@
-from pathlib import Path
-from typing import List
-import re
-from loguru import logger
-from bs4 import BeautifulSoup
-from bs4.element import NavigableString, Tag
 import json
+import re
 from datetime import datetime
+from pathlib import Path
+from typing import List, Optional
 
-from typing import Optional
-from sx_data_dictionary.config import HTM_DIR, JSON_DIR, logger, configure_logging
+from bs4 import BeautifulSoup
+from bs4.element import Tag
+from loguru import logger
 
+from sx_data_dictionary.config import HTM_DIR, JSON_DIR, configure_logging
 
 # make sure logging is setup
 log_file = configure_logging()
@@ -415,7 +414,7 @@ if __name__ == "__main__":
     # output parsed module/table data to JSON
     try:
         output_file = run_dictionary_pipeline()
-        print(f"\nDictionary generation complete!")
+        print("\nDictionary generation complete!")
         print(f"Output saved to: {output_file}")
     except Exception as e:
         print(f"Error: {e}")

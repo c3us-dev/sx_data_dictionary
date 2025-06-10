@@ -1,8 +1,8 @@
-from pathlib import Path
-from loguru import logger
-from datetime import datetime
 import sys
+from datetime import datetime
+from pathlib import Path
 
+from loguru import logger
 
 # project root
 PROJECT_ROOT = Path(__file__).parent.parent.parent
