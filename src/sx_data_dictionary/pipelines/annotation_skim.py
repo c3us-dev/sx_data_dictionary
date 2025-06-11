@@ -174,7 +174,13 @@ def process_field_annotations(dictionary_path: Path) -> dict:
         for table_name, table_data in module_data["tables"].items():
             log.debug(f"Processing table: {table_name}")
 
-            field_annotations["modules"][module_code]["tables"][table_name] = {
+            # clean up table names if they have 'tbl' from filename
+            clean_table_name = table_name
+            if clean_table_name.lower().endswith("tbl"):
+                clean_table_name = clean_table_name[:-3]
+                log.debug(f"Cleaned table name: {clean_table_name} from {table_name}")
+
+            field_annotations["modules"][module_code]["tables"][clean_table_name] = {
                 "title": table_data.get("title", ""),
                 "fields": {},
             }
@@ -191,9 +197,9 @@ def process_field_annotations(dictionary_path: Path) -> dict:
 
                         annotations = parse_field_annotations(html_content)
 
-                        field_annotations["modules"][module_code]["tables"][table_name][
-                            "fields"
-                        ][field_name] = annotations
+                        field_annotations["modules"][module_code]["tables"][
+                            clean_table_name
+                        ]["fields"][field_name] = annotations
                         fields_processed += 1
 
                         if fields_processed % 100 == 0:
@@ -205,7 +211,7 @@ def process_field_annotations(dictionary_path: Path) -> dict:
                         fields_failed += 1
                 except Exception as e:
                     log.error(
-                        f"Error processing field {field_name} in table {table_name}: {e}"
+                        f"Error processing field {field_name} in table {clean_table_name}: {e}"
                     )
                     fields_failed += 1
 
