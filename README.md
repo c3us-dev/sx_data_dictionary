@@ -63,9 +63,7 @@ pip install -e .
 
 ---
 
-### Running Commands
-
----
+## Running Commands
 
 #### Choose your desired pipeline:
 
