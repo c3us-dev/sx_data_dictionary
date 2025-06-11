@@ -64,6 +64,12 @@ def read_htm(file_path: Path) -> str:
             content = f.read()
         log.debug(f"Read {file_path.name} successfully")
         return content
+    # avoid getting tripped up by Windows legacy single-byte character encodings
+    except UnicodeDecodeError:
+        with file_path.open("r", encoding="cp1252") as f:
+            content = f.read()
+        log.info(f"Reading {file_path.name} with cp1252 encoding")
+        return content
     except Exception as e:
         log.error(f"Error reading {file_path.name}: {e}")
         raise
@@ -380,7 +386,7 @@ def save_dictionary_to_json(dictionary: dict, output_path: Path) -> None:
 
     try:
         with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(dictionary, f, indent=2)
+            json.dump(dictionary, f, indent=2, ensure_ascii=False)
         log.info(f"Dictionary saved successfully to {output_path}")
     except Exception as e:
         log.error(f"Error saving dictionary to {output_path}: {e}")
