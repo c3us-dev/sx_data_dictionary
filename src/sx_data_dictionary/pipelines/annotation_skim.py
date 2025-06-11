@@ -1,13 +1,15 @@
-from sx_data_dictionary.config import configure_logging, JSON_DIR
-from loguru import logger
-from bs4 import BeautifulSoup, Tag
 import json
+import re
+import unicodedata
 from datetime import datetime
 from pathlib import Path
-import re
 from typing import Optional
+
+from bs4 import BeautifulSoup, Tag
+from loguru import logger
+
+from sx_data_dictionary.config import JSON_DIR, configure_logging
 from sx_data_dictionary.pipelines.htm_to_json import read_htm
-import unicodedata
 
 log_file = configure_logging()
 
