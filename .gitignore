@@ -6,6 +6,9 @@ data/chm/*
 data/htm/*
 !data/chm/.gitkeep
 !data/htm/.gitkeep
+!data/json/.gitkeep
+!data/json/
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -201,3 +204,7 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+#UV
+uv.lock
+.python-version
