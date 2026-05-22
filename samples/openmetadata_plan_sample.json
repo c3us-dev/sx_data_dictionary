@@ -1,0 +1,36 @@
+{
+  "data_product_fqn": "ERP - CSD.CSD Core/Silver",
+  "rows": [
+    {
+      "entity_type": "table",
+      "table_fqn": "QAT Data Warehouse.dw.core.csd_addon",
+      "table_name": "csd_addon",
+      "column_name": null,
+      "current_display_name": "csd_addon",
+      "proposed_display_name": "Addon Data",
+      "display_name_action": "write",
+      "current_description_state": "blank",
+      "proposed_description": null,
+      "description_action": "skip_no_source",
+      "reason": "displayName is blank/default; no source description",
+      "source_ref": "samples/openmetadata_dictionary_sample.csv:2"
+    },
+    {
+      "entity_type": "column",
+      "table_fqn": "QAT Data Warehouse.dw.core.csd_addon",
+      "table_name": "csd_addon",
+      "column_name": "addonamt",
+      "current_display_name": "",
+      "proposed_display_name": "Addon Amt",
+      "display_name_action": "write",
+      "current_description_state": "blank",
+      "proposed_description": "dollar amount or percent of addon based on the value of addontype",
+      "description_action": "write",
+      "reason": "displayName is blank/default; description is blank",
+      "source_ref": "samples/openmetadata_dictionary_sample.csv:2"
+    }
+  ],
+  "unmatched_dictionary_tables": [],
+  "unmatched_dictionary_columns": [],
+  "tables_without_dictionary": []
+}

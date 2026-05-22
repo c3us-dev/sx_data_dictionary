@@ -126,3 +126,96 @@ JOIN tables ON fields.table_id = tables.table_id
 WHERE description LIKE "%customer%account%"
 ORDER BY module_code, table_name;
 ```
+
+---
+
+## OpenMetadata Loader
+
+The `sx-om-dict-loader` command loads SX dictionary labels and field descriptions
+into OpenMetadata without changing physical warehouse names, data types, tags,
+owners, domains, data products, tests, sample data, or lineage.
+
+The QAT CSD target Data Product displays in OpenMetadata as `CSD Core/Silver`
+under domain `ERP - CSD`. Use this OpenMetadata FQN:
+
+```bash
+--data-product-fqn "ERP - CSD.CSD Core/Silver"
+```
+
+The UI URL encodes the slash as `%2F`; pass the plain slash to the CLI.
+
+### Plan Only
+
+```bash
+sx-om-dict-loader plan \
+  --om-url http://localhost:8585/api \
+  --data-product-fqn "ERP - CSD.CSD Core/Silver" \
+  --service-name "QAT Data Warehouse" \
+  --database-name dw \
+  --schema-name core \
+  --source-prefix csd_ \
+  --input data/sqlite/annotations_20250611_161921.db \
+  --table-list-config ../warehouse-layer/config.yaml \
+  --plan-output out/om-dictionary-plan.json
+```
+
+### Apply Fill-Only Updates
+
+```bash
+sx-om-dict-loader apply \
+  --om-url http://localhost:8585/api \
+  --data-product-fqn "ERP - CSD.CSD Core/Silver" \
+  --input data/sqlite/annotations_20250611_161921.db \
+  --table-list-config ../warehouse-layer/config.yaml \
+  --backup-output out/om-before-dictionary-load.json \
+  --plan-output out/om-dictionary-plan.json \
+  --result-output out/om-apply-result.json
+```
+
+Set `OM_JWT_TOKEN` or pass `--jwt-token` when the OpenMetadata API requires a
+bearer token.
+
+### Safety Defaults
+
+- The default command is `plan`; it writes no OpenMetadata changes.
+- Updates are scoped to assets in the configured Data Product.
+- `--table-list-config ../warehouse-layer/config.yaml` further limits source
+  input to `variables.csd_active_source_tables`, currently the 72 CSD core
+  tables.
+- Table display names are filled only when blank/default, such as `csd_addon`.
+- Column display names are filled only when blank or equal to the physical column
+  name.
+- Descriptions are filled only when blank.
+- Current generated SX output has table titles but no separate table description;
+  v1 does not synthesize table descriptions from titles.
+- Existing curated display names/descriptions are skipped as conflicts unless
+  explicit overwrite flags are provided.
+
+Overwrite mode intentionally requires friction:
+
+```bash
+sx-om-dict-loader apply \
+  --data-product-fqn "ERP - CSD.CSD Core/Silver" \
+  --input data/sqlite/annotations_20250611_161921.db \
+  --display-name-mode overwrite \
+  --description-mode overwrite \
+  --allow-overwrite-display-name \
+  --allow-overwrite-description \
+  --confirm-overwrite "OVERWRITE OPENMETADATA CURATED METADATA" \
+  --backup-output out/om-before-overwrite.json
+```
+
+### PATCH Probe
+
+OpenMetadata 1.12.x docs describe table PATCH but mix object-body and JSON Patch
+language. Before bulk apply, verify the local container accepts object-body PATCH:
+
+```bash
+sx-om-dict-loader probe-patch \
+  --om-url http://localhost:8585/api \
+  --table-fqn "QAT Data Warehouse.dw.core.csd_addon"
+```
+
+Add `--apply-probe` to send a no-op object-body PATCH against that one table.
+If the live server rejects it, switch the client adapter to JSON Patch before
+running `apply`.

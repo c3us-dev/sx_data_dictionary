@@ -1,0 +1,3 @@
+table_code,table_label,table_description,column_name,column_label,column_description
+addon,Addon Data,,addonamt,Addon Amt,dollar amount or percent of addon based on the value of addontype
+addon,Addon Data,,cono,Company #,Company number
