@@ -1,13 +1,19 @@
 from __future__ import annotations
 
 import json
+import re
+from html import unescape
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 from sx_data_dictionary.openmetadata_loader.models import ApplyResult, Plan
 from sx_data_dictionary.openmetadata_loader.openmetadata import OpenMetadataClient
-from sx_data_dictionary.openmetadata_loader.planner import build_patch_payload, rows_by_table
+from sx_data_dictionary.openmetadata_loader.planner import (
+    build_json_patch_operations,
+    build_patch_payload,
+    rows_by_table,
+)
 
 
 def write_json(path: Path, payload: Any) -> None:
@@ -41,7 +47,9 @@ def apply_plan(
             continue
         try:
             table_id = str(table["id"])
-            response = client.patch_table(table_id, payload)
+            response = client.patch_table_json_patch(
+                table_id, build_json_patch_operations(table, table_rows)
+            )
             verified = client.get_table(table_fqn)
             _verify_table(table_fqn, table_rows, verified)
             results.append(
@@ -72,6 +80,23 @@ def _verify_table(table_fqn: str, rows: list[Any], table: dict[str, Any]) -> Non
                 raise RuntimeError(f"{table_fqn}.{row.column_name} was not found after patch")
         if row.display_name_action == "write" and target.get("displayName") != row.proposed_display_name:
             raise RuntimeError(f"{row.entity_type} displayName did not verify for {table_fqn}")
-        if row.description_action == "write" and target.get("description") != row.proposed_description:
+        if row.description_action == "write" and not _description_matches(
+            target.get("description"), row.proposed_description
+        ):
             raise RuntimeError(f"{row.entity_type} description did not verify for {table_fqn}")
 
+
+def _description_matches(actual: str | None, expected: str | None) -> bool:
+    if actual == expected:
+        return True
+    return _plain_text(actual) == _plain_text(expected)
+
+
+def _plain_text(value: str | None) -> str:
+    if value is None:
+        return ""
+    text = unescape(str(value))
+    text = re.sub(r"<br\s*/?>", "\n", text, flags=re.IGNORECASE)
+    text = re.sub(r"</p>\s*<p>", "\n\n", text, flags=re.IGNORECASE)
+    text = re.sub(r"<[^>]+>", "", text)
+    return re.sub(r"\s+", " ", text).strip()
