@@ -9,6 +9,7 @@ import pytest
 import httpx
 
 from sx_data_dictionary.openmetadata_loader.apply import _description_matches, apply_plan
+from sx_data_dictionary.openmetadata_loader.cli import _bootstrap_output_stem
 from sx_data_dictionary.openmetadata_loader.models import (
     CONFIRM_OVERWRITE_PHRASE,
     DisplayNameMode,
@@ -375,6 +376,12 @@ def test_data_product_lookup_falls_back_to_ui_alias() -> None:
 
     assert data_product["fullyQualifiedName"] == " CSD Core/Silver"
     assert len(seen_paths) > 1
+
+
+def test_bootstrap_output_stem_uses_normalized_table_codes() -> None:
+    assert _bootstrap_output_stem(["addon"], "csd_") == "om_loader_bootstrap_addon"
+    assert _bootstrap_output_stem(["csd_addon"], "csd_") == "om_loader_bootstrap_addon"
+    assert _bootstrap_output_stem(["addon", "icsw"], "csd_") == "om_loader_bootstrap_2_tables"
 
 
 def _source_table(table_code: str):

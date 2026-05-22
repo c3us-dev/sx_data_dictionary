@@ -19,7 +19,10 @@ from sx_data_dictionary.openmetadata_loader.models import (
     DisplayNameMode,
     LoaderOptions,
 )
-from sx_data_dictionary.openmetadata_loader.normalize import build_table_fqn
+from sx_data_dictionary.openmetadata_loader.normalize import (
+    build_table_fqn,
+    normalize_table_code,
+)
 from sx_data_dictionary.openmetadata_loader.openmetadata import (
     OpenMetadataClient,
     extract_table_asset_fqns,
@@ -229,6 +232,115 @@ def apply(
         client.close()
 
 
+@app.command("bootstrap-table")
+def bootstrap_table(
+    table_code: Annotated[
+        list[str],
+        typer.Argument(help="Legacy table code(s), such as addon or icsw."),
+    ],
+    input_path: Annotated[Path, typer.Option("--input", exists=True, readable=True)],
+    data_product_fqn: Annotated[
+        str, typer.Option("--data-product-fqn")
+    ] = "ERP - CSD.CSD Core/Silver",
+    om_url: Annotated[str | None, typer.Option("--om-url", envvar="OM_URL")] = None,
+    jwt_token: Annotated[
+        str | None, typer.Option("--jwt-token", envvar="OM_JWT_TOKEN")
+    ] = None,
+    service_name: Annotated[str, typer.Option("--service-name")] = "QAT Data Warehouse",
+    database_name: Annotated[str, typer.Option("--database-name")] = "dw",
+    schema_name: Annotated[str, typer.Option("--schema-name")] = "core",
+    source_prefix: Annotated[str, typer.Option("--source-prefix")] = "csd_",
+    table_list_config: Annotated[Path | None, typer.Option("--table-list-config")] = None,
+    require_data_product_membership: Annotated[
+        bool,
+        typer.Option(
+            "--require-data-product-membership/--no-require-data-product-membership"
+        ),
+    ] = True,
+    plan_output: Annotated[Path | None, typer.Option("--plan-output")] = None,
+    backup_output: Annotated[Path | None, typer.Option("--backup-output")] = None,
+    result_output: Annotated[Path | None, typer.Option("--result-output")] = None,
+    apply_changes: Annotated[bool, typer.Option("--apply")] = False,
+    yes: Annotated[bool, typer.Option("--yes")] = False,
+    description_mode: Annotated[
+        DescriptionMode, typer.Option("--description-mode")
+    ] = DescriptionMode.FILL_EMPTY,
+    display_name_mode: Annotated[
+        DisplayNameMode, typer.Option("--display-name-mode")
+    ] = DisplayNameMode.FILL_DEFAULT,
+    allow_overwrite_display_name: Annotated[
+        bool, typer.Option("--allow-overwrite-display-name")
+    ] = False,
+    allow_overwrite_description: Annotated[
+        bool, typer.Option("--allow-overwrite-description")
+    ] = False,
+    confirm_overwrite: Annotated[str | None, typer.Option("--confirm-overwrite")] = None,
+) -> None:
+    if not table_code:
+        raise typer.BadParameter("At least one table code is required.")
+    output_stem = _bootstrap_output_stem(table_code, source_prefix)
+    plan_output = plan_output or Path("tmp") / f"{output_stem}_plan.json"
+    backup_output = backup_output or Path("tmp") / f"{output_stem}_backup_before_apply.json"
+    result_output = result_output or Path("tmp") / f"{output_stem}_apply_result.json"
+    options = _common_options(
+        input_path,
+        data_product_fqn,
+        om_url,
+        service_name,
+        database_name,
+        schema_name,
+        source_prefix,
+        plan_output,
+        backup_output,
+        result_output,
+        table_list_config,
+        require_data_product_membership,
+        None,
+        table_code,
+        description_mode,
+        display_name_mode,
+        allow_overwrite_display_name,
+        allow_overwrite_description,
+        confirm_overwrite,
+        yes,
+        False,
+    )
+    if apply_changes:
+        validate_overwrite_options(options)
+
+    client = OpenMetadataClient(options.om_url, jwt_token_from_env(jwt_token))
+    try:
+        generated, current_tables = _generate_live_plan_with_tables(client, options)
+        _print_summary(generated)
+        write_json(plan_output, generated.model_dump(mode="json"))
+        console.print(f"Wrote plan to {plan_output}")
+        if not apply_changes:
+            console.print("Dry run only. Add --apply to write metadata.")
+            return
+
+        writable_fqns = set(rows_by_table(generated))
+        backup_tables(
+            backup_output,
+            {fqn: current_tables[fqn] for fqn in sorted(writable_fqns)},
+        )
+        if writable_fqns and not yes:
+            typer.confirm(
+                f"Apply metadata updates to {len(writable_fqns)} OpenMetadata tables?",
+                abort=True,
+            )
+        results = apply_plan(
+            client=client,
+            plan=generated,
+            current_tables=current_tables,
+            continue_on_error=False,
+        )
+        write_json(result_output, [result.model_dump(mode="json") for result in results])
+        console.print(f"Wrote backup to {backup_output}")
+        console.print(f"Wrote apply result to {result_output}")
+    finally:
+        client.close()
+
+
 @app.command("probe-patch")
 def probe_patch(
     table_fqn: Annotated[str, typer.Option("--table-fqn")],
@@ -269,6 +381,12 @@ def _generate_live_plan_with_tables(
     client: OpenMetadataClient, options: LoaderOptions
 ):
     sources = load_dictionary_source(options.input_path, options.source_prefix)
+    if options.include_table:
+        include_codes = {
+            normalize_table_code(table, options.source_prefix)
+            for table in options.include_table
+        }
+        sources = {code: source for code, source in sources.items() if code in include_codes}
     table_list_fqns: set[str] = set()
     if options.table_list_config:
         allowed_codes = load_active_table_codes_from_config(options.table_list_config)
@@ -329,6 +447,15 @@ def _generate_live_plan_with_tables(
         ),
         current_tables,
     )
+
+
+def _bootstrap_output_stem(table_codes: list[str], source_prefix: str) -> str:
+    normalized = [normalize_table_code(table, source_prefix) for table in table_codes]
+    if len(normalized) == 1:
+        table_part = normalized[0]
+    else:
+        table_part = f"{len(normalized)}_tables"
+    return f"om_loader_bootstrap_{table_part}"
 
 
 def _print_summary(generated) -> None:

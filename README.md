@@ -217,6 +217,45 @@ Expected output files:
 - `out/om-dictionary-plan.json`: exact planned actions.
 - `out/om-apply-result.json`: table-level apply successes/failures.
 
+### Bootstrap a New Core Table
+
+When a new CSD source table is added to `core` for modeling, use
+`bootstrap-table` to load just that table's dictionary metadata.
+
+Prerequisites:
+
+- The warehouse object exists in OpenMetadata as
+  `QAT Data Warehouse.dw.core.csd_<table>`.
+- The table code is present in
+  `../warehouse-layer/config.yaml:variables.csd_active_source_tables`.
+- The OpenMetadata table is attached to the `CSD Core/Silver` Data Product.
+
+Dry run first:
+
+```bash
+sx-om-dict-loader bootstrap-table icsw \
+  --om-url http://localhost:8585/api \
+  --input data/sqlite/annotations_20250611_161921.db \
+  --table-list-config ../warehouse-layer/config.yaml
+```
+
+The command writes a default plan such as
+`tmp/om_loader_bootstrap_icsw_plan.json`. Review it, then apply:
+
+```bash
+sx-om-dict-loader bootstrap-table icsw \
+  --om-url http://localhost:8585/api \
+  --input data/sqlite/annotations_20250611_161921.db \
+  --table-list-config ../warehouse-layer/config.yaml \
+  --apply \
+  --yes
+```
+
+This uses the same safety defaults as the full loader: it fills only
+blank/default display names and blank descriptions, writes a backup before any
+PATCH, and skips curated metadata unless overwrite flags and the typed
+confirmation phrase are provided.
+
 ### Safety Defaults
 
 - The default command is `plan`; it writes no OpenMetadata changes.
