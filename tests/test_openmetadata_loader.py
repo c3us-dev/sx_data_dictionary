@@ -8,7 +8,7 @@ from pathlib import Path
 import pytest
 import httpx
 
-from sx_data_dictionary.openmetadata_loader.apply import apply_plan
+from sx_data_dictionary.openmetadata_loader.apply import _description_matches, apply_plan
 from sx_data_dictionary.openmetadata_loader.models import (
     CONFIRM_OVERWRITE_PHRASE,
     DisplayNameMode,
@@ -19,6 +19,7 @@ from sx_data_dictionary.openmetadata_loader.openmetadata import (
     OpenMetadataClient,
     OpenMetadataError,
     extract_table_asset_fqns,
+    table_has_data_product,
 )
 from sx_data_dictionary.openmetadata_loader.normalize import (
     build_table_fqn,
@@ -27,6 +28,7 @@ from sx_data_dictionary.openmetadata_loader.normalize import (
     normalize_table_name,
 )
 from sx_data_dictionary.openmetadata_loader.planner import (
+    build_json_patch_operations,
     build_patch_payload,
     generate_plan,
     validate_overwrite_options,
@@ -240,6 +242,23 @@ def test_patch_payload_preserves_column_fields(tmp_path: Path) -> None:
     assert payload["columns"][0]["dataType"] == "NUMBER"
     assert payload["columns"][0]["tags"] == [{"tagFQN": "PII.None"}]
 
+    operations = build_json_patch_operations(table, [row for row in plan.rows if row.will_write])
+    assert operations[0] == {
+        "op": "replace",
+        "path": "/displayName",
+        "value": "Addon Data",
+    }
+    assert operations[1] == {
+        "op": "replace",
+        "path": "/columns/0/displayName",
+        "value": "Addon Amt",
+    }
+    assert operations[2] == {
+        "op": "replace",
+        "path": "/columns/0/description",
+        "value": "dollar amount",
+    }
+
 
 def test_apply_plan_patches_and_verifies_safe_updates(tmp_path: Path) -> None:
     options = LoaderOptions(
@@ -282,6 +301,14 @@ def test_apply_plan_patches_and_verifies_safe_updates(tmp_path: Path) -> None:
     assert client.patches[0]["columns"][0]["description"] == "dollar amount"
 
 
+def test_description_verification_accepts_openmetadata_html_wrapping() -> None:
+    assert _description_matches("<p>dollar amount</p>", "dollar amount")
+    assert _description_matches(
+        "<p>first line</p><p>second line</p>",
+        "first line second line",
+    )
+
+
 def test_extract_assets_and_http_error_handling() -> None:
     assert extract_table_asset_fqns(
         {
@@ -311,6 +338,45 @@ def test_extract_assets_and_http_error_handling() -> None:
     client.close()
 
 
+def test_table_has_data_product_matches_id_or_fqn() -> None:
+    data_product = {
+        "id": "dp-id",
+        "name": " CSD Core/Silver",
+        "fullyQualifiedName": " CSD Core/Silver",
+    }
+    assert table_has_data_product(
+        {"dataProducts": [{"id": "dp-id", "fullyQualifiedName": "other"}]},
+        data_product,
+    )
+    assert table_has_data_product(
+        {"dataProducts": [{"fullyQualifiedName": " CSD Core/Silver"}]},
+        data_product,
+    )
+    assert not table_has_data_product(
+        {"dataProducts": [{"fullyQualifiedName": "Other Product"}]},
+        data_product,
+    )
+
+
+def test_data_product_lookup_falls_back_to_ui_alias() -> None:
+    seen_paths: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        seen_paths.append(str(request.url))
+        if "%20CSD%20Core%2FSilver" in str(request.url):
+            assert "fields=assets" in str(request.url)
+            return httpx.Response(200, json={"fullyQualifiedName": " CSD Core/Silver"})
+        return httpx.Response(404, text="missing")
+
+    client = OpenMetadataClient("http://openmetadata/api")
+    client.client = httpx.Client(base_url=client.base_url, transport=httpx.MockTransport(handler))
+    data_product = client.get_data_product_any("ERP - CSD.CSD Core/Silver")
+    client.close()
+
+    assert data_product["fullyQualifiedName"] == " CSD Core/Silver"
+    assert len(seen_paths) > 1
+
+
 def _source_table(table_code: str):
     from sx_data_dictionary.openmetadata_loader.models import ColumnSource, TableSource
 
@@ -336,12 +402,20 @@ class _FakeClient:
         self.table = json.loads(json.dumps(table))
         self.patches: list[dict] = []
 
-    def patch_table(self, table_id: str, payload: dict) -> dict:
+    def patch_table_json_patch(self, table_id: str, operations: list[dict]) -> dict:
         assert table_id == self.table["id"]
+        payload = {}
+        for operation in operations:
+            assert operation["op"] in {"add", "replace"}
+            path = operation["path"].strip("/").split("/")
+            if path[0] == "columns":
+                self.table["columns"][int(path[1])][path[2]] = operation["value"]
+            else:
+                payload[path[0]] = operation["value"]
         self.patches.append(payload)
         self.table.update({key: value for key, value in payload.items() if key != "columns"})
-        if "columns" in payload:
-            self.table["columns"] = payload["columns"]
+        if any(operation["path"].startswith("/columns/") for operation in operations):
+            payload["columns"] = self.table["columns"]
         return self.table
 
     def get_table(self, table_fqn: str) -> dict:

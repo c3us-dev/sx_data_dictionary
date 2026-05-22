@@ -25,16 +25,16 @@ class OpenMetadataClient:
         return self._request(
             "GET",
             f"/v1/dataProducts/name/{quote(fqn, safe='')}",
-            params={"fields": "domain,assets"},
+            params={"fields": "assets"},
         )
 
     def get_data_product_any(self, fqn: str) -> dict[str, Any]:
         candidates = []
-        for candidate in (
-            fqn,
-            fqn.strip(),
-            f" {fqn.strip()}",
-        ):
+        fqn_parts = [fqn, fqn.strip(), f" {fqn.strip()}"]
+        if "." in fqn.strip():
+            product_name = fqn.strip().split(".", 1)[1].strip()
+            fqn_parts.extend([product_name, f" {product_name}"])
+        for candidate in fqn_parts:
             if candidate and candidate not in candidates:
                 candidates.append(candidate)
 
@@ -55,6 +55,29 @@ class OpenMetadataClient:
             params={"fields": "columns,tags,owners,domains,dataProducts"},
         )
 
+    def list_tables(
+        self,
+        *,
+        database_schema_fqn: str,
+        fields: str = "columns,tags,owners,domains,dataProducts",
+        limit: int = 1000,
+    ) -> list[dict[str, Any]]:
+        tables: list[dict[str, Any]] = []
+        after: str | None = None
+        while True:
+            params: dict[str, Any] = {
+                "databaseSchema": database_schema_fqn,
+                "fields": fields,
+                "limit": limit,
+            }
+            if after:
+                params["after"] = after
+            page = self._request("GET", "/v1/tables", params=params)
+            tables.extend(page.get("data") or [])
+            after = (page.get("paging") or {}).get("after")
+            if not after:
+                return tables
+
     def patch_table(self, table_id: str, payload: dict[str, Any]) -> dict[str, Any]:
         return self._request("PATCH", f"/v1/tables/{table_id}", json=payload)
 
@@ -64,8 +87,8 @@ class OpenMetadataClient:
         return self._request(
             "PATCH",
             f"/v1/tables/{table_id}",
-            json=operations,
             headers={"Content-Type": "application/json-patch+json"},
+            content=json_dumps(operations),
         )
 
     def _request(self, method: str, path: str, **kwargs: Any) -> dict[str, Any]:
@@ -78,6 +101,12 @@ class OpenMetadataClient:
         raise OpenMetadataError(
             f"{method} {path} failed with HTTP {response.status_code}: {body}"
         )
+
+
+def json_dumps(value: Any) -> str:
+    import json
+
+    return json.dumps(value)
 
 
 def extract_table_asset_fqns(data_product: dict[str, Any]) -> set[str]:
@@ -97,3 +126,30 @@ def extract_table_asset_fqns(data_product: dict[str, Any]) -> set[str]:
         elif href and "/tables/" in str(href) and fqn:
             fqns.add(str(fqn))
     return fqns
+
+
+def table_has_data_product(table: dict[str, Any], data_product: dict[str, Any]) -> bool:
+    target_values = {
+        str(value)
+        for value in (
+            data_product.get("id"),
+            data_product.get("name"),
+            data_product.get("fullyQualifiedName"),
+            data_product.get("displayName"),
+        )
+        if value
+    }
+    for ref in table.get("dataProducts") or []:
+        ref_values = {
+            str(value)
+            for value in (
+                ref.get("id"),
+                ref.get("name"),
+                ref.get("fullyQualifiedName"),
+                ref.get("displayName"),
+            )
+            if value
+        }
+        if target_values & ref_values:
+            return True
+    return False

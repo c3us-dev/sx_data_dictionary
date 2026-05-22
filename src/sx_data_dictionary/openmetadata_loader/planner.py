@@ -145,6 +145,60 @@ def build_patch_payload(table: dict[str, Any], plan_rows: list[PlanRow]) -> dict
     return payload
 
 
+def build_json_patch_operations(
+    table: dict[str, Any], plan_rows: list[PlanRow]
+) -> list[dict[str, Any]]:
+    operations: list[dict[str, Any]] = []
+    for row in plan_rows:
+        if row.entity_type == "table":
+            if row.display_name_action == MetadataAction.WRITE:
+                field = "displayName"
+                op = "replace" if field in table else "add"
+                operations.append(
+                    {"op": op, "path": f"/{field}", "value": row.proposed_display_name}
+                )
+            if row.description_action == MetadataAction.WRITE:
+                field = "description"
+                op = "replace" if field in table else "add"
+                operations.append(
+                    {"op": op, "path": f"/{field}", "value": row.proposed_description}
+                )
+            continue
+
+        if row.entity_type != "column" or not row.column_name:
+            continue
+        column_index, column = _find_column_index(table, row.column_name)
+        if column_index is None:
+            continue
+        if row.display_name_action == MetadataAction.WRITE:
+            field = "displayName"
+            op = "replace" if field in table else "add"
+            operations.append(
+                {
+                    "op": op if field in column else "add",
+                    "path": f"/columns/{column_index}/{field}",
+                    "value": row.proposed_display_name,
+                }
+            )
+        if row.description_action == MetadataAction.WRITE:
+            field = "description"
+            operations.append(
+                {
+                    "op": "replace" if field in column else "add",
+                    "path": f"/columns/{column_index}/{field}",
+                    "value": row.proposed_description,
+                }
+            )
+    return operations
+
+
+def _find_column_index(table: dict[str, Any], column_name: str) -> tuple[int | None, dict[str, Any]]:
+    for index, column in enumerate(table.get("columns", []) or []):
+        if str(column.get("name", "")).lower() == column_name.lower():
+            return index, column
+    return None, {}
+
+
 def rows_by_table(plan: Plan) -> dict[str, list[PlanRow]]:
     grouped: dict[str, list[PlanRow]] = {}
     for row in plan.rows:

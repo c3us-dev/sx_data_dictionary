@@ -59,6 +59,7 @@ class LoaderOptions(BaseModel):
     backup_output: Path | None = None
     result_output: Path | None = None
     table_list_config: Path | None = None
+    require_data_product_membership: bool = True
     limit: int | None = None
     include_table: tuple[str, ...] = ()
     description_mode: DescriptionMode = DescriptionMode.FILL_EMPTY
@@ -131,4 +132,3 @@ class ApplyResult(BaseModel):
     patched: bool = False
     error: str | None = None
     response: dict[str, Any] | None = None
-

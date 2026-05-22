@@ -23,6 +23,7 @@ from sx_data_dictionary.openmetadata_loader.normalize import build_table_fqn
 from sx_data_dictionary.openmetadata_loader.openmetadata import (
     OpenMetadataClient,
     extract_table_asset_fqns,
+    table_has_data_product,
 )
 from sx_data_dictionary.openmetadata_loader.planner import (
     generate_plan,
@@ -50,6 +51,7 @@ def _common_options(
     backup_output: Path | None,
     result_output: Path | None,
     table_list_config: Path | None,
+    require_data_product_membership: bool,
     limit: int | None,
     include_table: list[str],
     description_mode: DescriptionMode,
@@ -72,6 +74,7 @@ def _common_options(
         backup_output=backup_output,
         result_output=result_output,
         table_list_config=table_list_config,
+        require_data_product_membership=require_data_product_membership,
         limit=limit,
         include_table=tuple(include_table),
         description_mode=description_mode,
@@ -96,6 +99,12 @@ def plan(
     source_prefix: Annotated[str, typer.Option("--source-prefix")] = "csd_",
     plan_output: Annotated[Path | None, typer.Option("--plan-output")] = None,
     table_list_config: Annotated[Path | None, typer.Option("--table-list-config")] = None,
+    require_data_product_membership: Annotated[
+        bool,
+        typer.Option(
+            "--require-data-product-membership/--no-require-data-product-membership"
+        ),
+    ] = True,
     limit: Annotated[int | None, typer.Option("--limit")] = None,
     include_table: Annotated[list[str], typer.Option("--include-table")] = [],
     description_mode: Annotated[DescriptionMode, typer.Option("--description-mode")] = DescriptionMode.FILL_EMPTY,
@@ -116,6 +125,7 @@ def plan(
         None,
         None,
         table_list_config,
+        require_data_product_membership,
         limit,
         include_table,
         description_mode,
@@ -150,6 +160,12 @@ def apply(
     backup_output: Annotated[Path, typer.Option("--backup-output")] = Path("om_metadata_backup.json"),
     result_output: Annotated[Path, typer.Option("--result-output")] = Path("om_apply_result.json"),
     table_list_config: Annotated[Path | None, typer.Option("--table-list-config")] = None,
+    require_data_product_membership: Annotated[
+        bool,
+        typer.Option(
+            "--require-data-product-membership/--no-require-data-product-membership"
+        ),
+    ] = True,
     limit: Annotated[int | None, typer.Option("--limit")] = None,
     include_table: Annotated[list[str], typer.Option("--include-table")] = [],
     description_mode: Annotated[DescriptionMode, typer.Option("--description-mode")] = DescriptionMode.FILL_EMPTY,
@@ -172,6 +188,7 @@ def apply(
         backup_output,
         result_output,
         table_list_config,
+        require_data_product_membership,
         limit,
         include_table,
         description_mode,
@@ -233,8 +250,11 @@ def probe_patch(
             }
         )
         if apply_probe:
-            response = client.patch_table(str(table["id"]), object_payload)
-            console.print("Object-body PATCH succeeded.")
+            response = client.patch_table_json_patch(
+                str(table["id"]),
+                [{"op": "replace", "path": "/displayName", "value": proposed}],
+            )
+            console.print("JSON Patch succeeded.")
             console.print_json(data=response)
     finally:
         client.close()
@@ -249,9 +269,19 @@ def _generate_live_plan_with_tables(
     client: OpenMetadataClient, options: LoaderOptions
 ):
     sources = load_dictionary_source(options.input_path, options.source_prefix)
+    table_list_fqns: set[str] = set()
     if options.table_list_config:
         allowed_codes = load_active_table_codes_from_config(options.table_list_config)
         sources = {code: source for code, source in sources.items() if code in allowed_codes}
+        table_list_fqns = {
+            build_table_fqn(
+                options.service_name,
+                options.database_name,
+                options.schema_name,
+                source.warehouse_table_name,
+            )
+            for source in sources.values()
+        }
     data_product = client.get_data_product_any(options.data_product_fqn)
     asset_fqns = {
         fqn
@@ -265,7 +295,31 @@ def _generate_live_plan_with_tables(
             ).rstrip(".")
         )
     }
-    current_tables = {fqn: client.get_table(fqn) for fqn in sorted(asset_fqns)}
+    if table_list_fqns:
+        current_tables = {fqn: client.get_table(fqn) for fqn in sorted(table_list_fqns)}
+        if options.require_data_product_membership:
+            current_tables = {
+                fqn: table
+                for fqn, table in current_tables.items()
+                if table_has_data_product(table, data_product)
+            }
+        asset_fqns = set(current_tables)
+    elif asset_fqns:
+        current_tables = {fqn: client.get_table(fqn) for fqn in sorted(asset_fqns)}
+    else:
+        schema_fqn = build_table_fqn(
+            options.service_name,
+            options.database_name,
+            options.schema_name,
+            "",
+        ).rstrip(".")
+        schema_tables = client.list_tables(database_schema_fqn=schema_fqn)
+        current_tables = {
+            str(table["fullyQualifiedName"]): table
+            for table in schema_tables
+            if table.get("fullyQualifiedName") and table_has_data_product(table, data_product)
+        }
+        asset_fqns = set(current_tables)
     return (
         generate_plan(
             options=options,

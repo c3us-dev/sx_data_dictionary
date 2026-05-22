@@ -23,6 +23,7 @@ def make_options(
     backup_output: Path | None = None,
     result_output: Path | None = None,
     table_list_config: Path | None = None,
+    require_data_product_membership: bool = True,
     limit: int | None = None,
     include_table: tuple[str, ...] = (),
     description_mode: DescriptionMode = DescriptionMode.FILL_EMPTY,
@@ -45,6 +46,7 @@ def make_options(
         backup_output=backup_output,
         result_output=result_output,
         table_list_config=table_list_config,
+        require_data_product_membership=require_data_product_membership,
         limit=limit,
         include_table=include_table,
         description_mode=description_mode,
@@ -59,4 +61,3 @@ def make_options(
 
 def jwt_token_from_env(jwt_token: str | None = None) -> str | None:
     return jwt_token or os.environ.get("OM_JWT_TOKEN")
-

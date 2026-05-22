@@ -135,8 +135,40 @@ The `sx-om-dict-loader` command loads SX dictionary labels and field description
 into OpenMetadata without changing physical warehouse names, data types, tags,
 owners, domains, data products, tests, sample data, or lineage.
 
+### One-Time OpenMetadata Setup
+
+Create a dedicated OpenMetadata policy and role before generating the API token.
+The default bot policy denies display-name edits and will fail this loader.
+
+Policy: `Dictionary Loader Policy`
+
+Rules:
+
+| Rule | Resources | Operations | Effect | Condition |
+| --- | --- | --- | --- | --- |
+| `DictionaryLoaderViewTables` | `Table` | `ViewAll` | `Allow` | blank |
+| `DictionaryLoaderEditTableDocs` | `Table` | `EditDisplayName`, `EditDescription` | `Allow` | blank |
+| `DictionaryLoaderViewDataProducts` | `DataProduct` | `ViewAll` | `Allow` | blank |
+
+Then create `Dictionary Loader Role`, attach `Dictionary Loader Policy`, assign
+it to a loader bot or service user, and generate a JWT/access token for that
+principal. Remove `DefaultBotRole` from that principal if it still carries a
+display-name deny rule.
+
+Set the token in your shell; do not write it to a file:
+
+```powershell
+$env:OM_JWT_TOKEN = Read-Host "Paste OpenMetadata loader JWT token"
+```
+
+```bash
+export OM_JWT_TOKEN="paste-token-here"
+```
+
 The QAT CSD target Data Product displays in OpenMetadata as `CSD Core/Silver`
-under domain `ERP - CSD`. Use this OpenMetadata FQN:
+under domain `ERP - CSD`. The current API entity FQN is ` CSD Core/Silver`
+with a leading space. The loader accepts either that exact API FQN or this
+human-readable alias:
 
 ```bash
 --data-product-fqn "ERP - CSD.CSD Core/Silver"
@@ -144,7 +176,7 @@ under domain `ERP - CSD`. Use this OpenMetadata FQN:
 
 The UI URL encodes the slash as `%2F`; pass the plain slash to the CLI.
 
-### Plan Only
+### Plan
 
 ```bash
 sx-om-dict-loader plan \
@@ -159,7 +191,11 @@ sx-om-dict-loader plan \
   --plan-output out/om-dictionary-plan.json
 ```
 
-### Apply Fill-Only Updates
+Review the summary before applying. A normal first run for the current CSD core
+set should show 72 scoped tables, zero conflicts, zero unmatched dictionary
+tables, and writes only for blank/default display names and blank descriptions.
+
+### Apply
 
 ```bash
 sx-om-dict-loader apply \
@@ -172,16 +208,24 @@ sx-om-dict-loader apply \
   --result-output out/om-apply-result.json
 ```
 
-Set `OM_JWT_TOKEN` or pass `--jwt-token` when the OpenMetadata API requires a
-bearer token.
+The apply command recomputes the plan, writes a full pre-apply backup, patches
+table-by-table, re-fetches each table, and records apply results.
+
+Expected output files:
+
+- `out/om-before-dictionary-load.json`: pre-apply OpenMetadata metadata backup.
+- `out/om-dictionary-plan.json`: exact planned actions.
+- `out/om-apply-result.json`: table-level apply successes/failures.
 
 ### Safety Defaults
 
 - The default command is `plan`; it writes no OpenMetadata changes.
-- Updates are scoped to assets in the configured Data Product.
-- `--table-list-config ../warehouse-layer/config.yaml` further limits source
-  input to `variables.csd_active_source_tables`, currently the 72 CSD core
-  tables.
+- `--table-list-config ../warehouse-layer/config.yaml` uses
+  `variables.csd_active_source_tables`, currently the 72 CSD core tables, as the
+  primary table scope.
+- By default the loader still verifies each listed table belongs to the
+  configured Data Product. Use `--no-require-data-product-membership` only for a
+  table-list-only dry run or repair workflow.
 - Table display names are filled only when blank/default, such as `csd_addon`.
 - Column display names are filled only when blank or equal to the physical column
   name.
@@ -204,18 +248,3 @@ sx-om-dict-loader apply \
   --confirm-overwrite "OVERWRITE OPENMETADATA CURATED METADATA" \
   --backup-output out/om-before-overwrite.json
 ```
-
-### PATCH Probe
-
-OpenMetadata 1.12.x docs describe table PATCH but mix object-body and JSON Patch
-language. Before bulk apply, verify the local container accepts object-body PATCH:
-
-```bash
-sx-om-dict-loader probe-patch \
-  --om-url http://localhost:8585/api \
-  --table-fqn "QAT Data Warehouse.dw.core.csd_addon"
-```
-
-Add `--apply-probe` to send a no-op object-body PATCH against that one table.
-If the live server rejects it, switch the client adapter to JSON Patch before
-running `apply`.
