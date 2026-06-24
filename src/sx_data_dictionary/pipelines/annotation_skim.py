@@ -25,7 +25,35 @@ def parse_field_annotations(html_content: str) -> dict:
     soup = BeautifulSoup(html_content, "html.parser")
 
     # initiallize annotations dictionary
-    annotations = {"label": "", "help": "", "description": "", "content": ""}
+    annotations = {
+        "label": "",
+        "type": "",
+        "format": "",
+        "decimals": "",
+        "initial": "",
+        "extent": "",
+        "mandatory": "",
+        "val_exp": "",
+        "val_msg": "",
+        "help": "",
+        "trigger": "",
+        "indexes": [],
+        "description": "",
+        "content": "",
+    }
+    metadata_fields = {
+        "label": "label",
+        "type": "type",
+        "format": "format",
+        "decimals": "decimals",
+        "initial": "initial",
+        "extent": "extent",
+        "mandatory": "mandatory",
+        "val exp": "val_exp",
+        "val msg": "val_msg",
+        "help": "help",
+        "trigger": "trigger",
+    }
 
     # extract field metadata from the first table
     try:
@@ -49,13 +77,26 @@ def parse_field_annotations(html_content: str) -> dict:
 
                     field_name = field_name.replace(":", "").strip()
 
-                    # map specific fields to our annotation keys
-                    if field_name == "label":
-                        annotations["label"] = field_value
-                    elif field_name == "help":
-                        annotations["help"] = field_value
+                    if field_name in metadata_fields:
+                        annotations[metadata_fields[field_name]] = field_value
     except Exception as e:
         log.warning(f"Error extracting metadata: {e}")
+
+    try:
+        for table in soup.find_all("table"):
+            if not isinstance(table, Tag):
+                continue
+            table_text = table.get_text(" ", strip=True)
+            if not table_text.startswith("Indexes:"):
+                continue
+            annotations["indexes"] = [
+                link.get_text(strip=True)
+                for link in table.find_all("a")
+                if link.get_text(strip=True)
+            ]
+            break
+    except Exception as e:
+        log.warning(f"Error extracting field indexes: {e}")
 
     # extract description and content from the last table
     try:
@@ -80,17 +121,16 @@ def parse_field_annotations(html_content: str) -> dict:
                 # check section header
                 if "Description:" in row_text:
                     current_section = "description"
-                    # remove the section header
-                    # row_text = row_text.replace("Description:", "").strip()
+                    section_text = []
+                    continue
                 elif "Content:" in row_text:
                     # Save the previous section if any
                     if current_section == "description" and section_text:
-                        annotations["description"] = " ".join(section_text)
+                        annotations["description"] = "\n".join(section_text)
                         section_text = []
 
                     current_section = "content"
-                    # Remove the section header
-                    # row_text = row_text.replace("Content:", "").strip()
+                    continue
 
                 # build section text to avoid missing any content
                 if current_section and row_text:
@@ -98,18 +138,27 @@ def parse_field_annotations(html_content: str) -> dict:
 
             # save the last section
             if current_section == "description" and section_text:
-                annotations["description"] = " ".join(section_text)
+                annotations["description"] = "\n".join(section_text)
             elif current_section == "content" and section_text:
-                annotations["content"] = " ".join(section_text)
+                annotations["content"] = "\n".join(section_text)
     except Exception as e:
         log.warning(f"Error extracting description/content: {e}")
 
     # clean up the extracted text
     for key in annotations:
         if annotations[key]:
+            if key == "indexes":
+                continue
 
-            # replace multiple spaces with single space
-            text = re.sub(r"\s+", " ", annotations[key])
+            # Preserve useful line breaks in Description/Content code lists.
+            if key in {"description", "content"}:
+                lines = [
+                    re.sub(r"[ \t]+", " ", line).strip()
+                    for line in str(annotations[key]).splitlines()
+                ]
+                text = "\n".join(line for line in lines if line)
+            else:
+                text = re.sub(r"\s+", " ", annotations[key])
 
             # normalize unicode characters for consistent display
             text = unicodedata.normalize("NFC", text)
@@ -182,6 +231,8 @@ def process_field_annotations(dictionary_path: Path) -> dict:
 
             field_annotations["modules"][module_code]["tables"][clean_table_name] = {
                 "title": table_data.get("title", ""),
+                "indexes": table_data.get("indexes", []),
+                "triggers": table_data.get("triggers", []),
                 "fields": {},
             }
 
