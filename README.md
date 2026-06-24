@@ -126,3 +126,179 @@ JOIN tables ON fields.table_id = tables.table_id
 WHERE description LIKE "%customer%account%"
 ORDER BY module_code, table_name;
 ```
+
+---
+
+## OpenMetadata Loader
+
+The `sx-om-dict-loader` command loads SX dictionary labels and field descriptions
+into OpenMetadata without changing physical warehouse names, data types, tags,
+owners, domains, data products, tests, sample data, or lineage.
+
+### One-Time OpenMetadata Setup
+
+Create a dedicated OpenMetadata policy and role before generating the API token.
+The default bot policy denies display-name edits and will fail this loader.
+
+Policy: `Dictionary Loader Policy`
+
+Rules:
+
+| Rule | Resources | Operations | Effect | Condition |
+| --- | --- | --- | --- | --- |
+| `DictionaryLoaderViewTables` | `Table` | `ViewAll` | `Allow` | blank |
+| `DictionaryLoaderEditTableDocs` | `Table` | `EditDisplayName`, `EditDescription` | `Allow` | blank |
+| `DictionaryLoaderViewDataProducts` | `DataProduct` | `ViewAll` | `Allow` | blank |
+
+Then create `Dictionary Loader Role`, attach `Dictionary Loader Policy`, assign
+it to a loader bot or service user, and generate a JWT/access token for that
+principal. Remove `DefaultBotRole` from that principal if it still carries a
+display-name deny rule.
+
+Set the token in your shell; do not write it to a file:
+
+```powershell
+$env:OM_JWT_TOKEN = Read-Host "Paste OpenMetadata loader JWT token"
+```
+
+```bash
+export OM_JWT_TOKEN="paste-token-here"
+```
+
+The QAT CSD target Data Product displays in OpenMetadata as `CSD Core/Silver`
+under domain `ERP - CSD`. The current API entity FQN is ` CSD Core/Silver`
+with a leading space. The loader accepts either that exact API FQN or this
+human-readable alias:
+
+```bash
+--data-product-fqn "ERP - CSD.CSD Core/Silver"
+```
+
+The UI URL encodes the slash as `%2F`; pass the plain slash to the CLI.
+
+### Plan
+
+```bash
+sx-om-dict-loader plan \
+  --om-url http://localhost:8585/api \
+  --data-product-fqn "ERP - CSD.CSD Core/Silver" \
+  --service-name "QAT Data Warehouse" \
+  --database-name dw \
+  --schema-name core \
+  --source-prefix csd_ \
+  --input data/sqlite/annotations_20250611_161921.db \
+  --table-list-config ../warehouse-layer/config.yaml \
+  --plan-output out/om-dictionary-plan.json
+```
+
+Review the summary before applying. A normal first run for the current CSD core
+set should show 72 scoped tables, zero conflicts, zero unmatched dictionary
+tables, and writes only for blank/default display names and blank descriptions.
+
+### Apply
+
+```bash
+sx-om-dict-loader apply \
+  --om-url http://localhost:8585/api \
+  --data-product-fqn "ERP - CSD.CSD Core/Silver" \
+  --input data/sqlite/annotations_20250611_161921.db \
+  --table-list-config ../warehouse-layer/config.yaml \
+  --backup-output out/om-before-dictionary-load.json \
+  --plan-output out/om-dictionary-plan.json \
+  --result-output out/om-apply-result.json
+```
+
+The apply command recomputes the plan, writes a full pre-apply backup, patches
+table-by-table, re-fetches each table, and records apply results.
+
+Expected output files:
+
+- `out/om-before-dictionary-load.json`: pre-apply OpenMetadata metadata backup.
+- `out/om-dictionary-plan.json`: exact planned actions.
+- `out/om-apply-result.json`: table-level apply successes/failures.
+
+### Bootstrap a New Core Table
+
+When a new CSD source table is added to `core` for modeling, use
+`bootstrap-table` to load just that table's dictionary metadata.
+
+Prerequisites:
+
+- The warehouse object exists in OpenMetadata as
+  `QAT Data Warehouse.dw.core.csd_<table>`.
+- The table code is present in
+  `../warehouse-layer/config.yaml:variables.csd_active_source_tables`.
+- The OpenMetadata table is attached to the `CSD Core/Silver` Data Product.
+
+Dry run first:
+
+```bash
+sx-om-dict-loader bootstrap-table icsw \
+  --om-url http://localhost:8585/api \
+  --input data/sqlite/annotations_20250611_161921.db \
+  --table-list-config ../warehouse-layer/config.yaml
+```
+
+The command writes a default plan such as
+`tmp/om_loader_bootstrap_icsw_plan.json`. Review it, then apply:
+
+```bash
+sx-om-dict-loader bootstrap-table icsw \
+  --om-url http://localhost:8585/api \
+  --input data/sqlite/annotations_20250611_161921.db \
+  --table-list-config ../warehouse-layer/config.yaml \
+  --apply \
+  --yes
+```
+
+This uses the same safety defaults as the full loader: it fills only
+blank/default display names and blank descriptions, writes a backup before any
+PATCH, and skips curated metadata unless overwrite flags and the typed
+confirmation phrase are provided.
+
+### Legacy Content Loaded
+
+Column descriptions are written with the heading
+`Legacy Data Dictionary Entries:` and include every populated legacy section
+available in the annotation SQLite. Existing SQLite files include `Description`,
+`Help`, and `Content`; newly regenerated SQLite files also include field
+metadata such as `Type`, `Format`, `Decimals`, `Initial`, `Extent`, `Mandatory`,
+`Val Exp`, `Val Msg`, `Trigger`, and field-level `Indexes`. This keeps code-list
+explanations and short legacy help text in OpenMetadata so users can prune and
+rewrite it there.
+
+Newly regenerated annotation SQLite files also include table index metadata from
+the original dictionary HTML. When present, the loader adds `Primary Key` and
+`Indexes` sections to blank table descriptions.
+
+### Safety Defaults
+
+- The default command is `plan`; it writes no OpenMetadata changes.
+- `--table-list-config ../warehouse-layer/config.yaml` uses
+  `variables.csd_active_source_tables`, currently the 72 CSD core tables, as the
+  primary table scope.
+- By default the loader still verifies each listed table belongs to the
+  configured Data Product. Use `--no-require-data-product-membership` only for a
+  table-list-only dry run or repair workflow.
+- Table display names are filled only when blank/default, such as `csd_addon`.
+- Column display names are filled only when blank or equal to the physical column
+  name.
+- Descriptions are filled only when blank.
+- Current generated SX output has table titles but no separate table description;
+  v1 does not synthesize table descriptions from titles.
+- Existing curated display names/descriptions are skipped as conflicts unless
+  explicit overwrite flags are provided.
+
+Overwrite mode intentionally requires friction:
+
+```bash
+sx-om-dict-loader apply \
+  --data-product-fqn "ERP - CSD.CSD Core/Silver" \
+  --input data/sqlite/annotations_20250611_161921.db \
+  --display-name-mode overwrite \
+  --description-mode overwrite \
+  --allow-overwrite-display-name \
+  --allow-overwrite-description \
+  --confirm-overwrite "OVERWRITE OPENMETADATA CURATED METADATA" \
+  --backup-output out/om-before-overwrite.json
+```

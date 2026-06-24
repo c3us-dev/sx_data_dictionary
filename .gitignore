@@ -7,6 +7,9 @@ data/htm/*
 !data/chm/.gitkeep
 !data/htm/.gitkeep
 
+# output
+tmp/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
