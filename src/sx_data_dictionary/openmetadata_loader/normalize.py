@@ -3,6 +3,8 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+LEGACY_ENTRIES_HEADING = "Legacy Data Dictionary Entries:"
+
 
 def clean_identifier(value: str | None) -> str:
     if value is None:
@@ -74,6 +76,40 @@ def clean_description(value: str | None) -> str | None:
     return text or None
 
 
+def clean_legacy_section(value: str | None, section_label: str) -> str | None:
+    text = clean_multiline_text(value)
+    if not text:
+        return None
+    text = re.sub(
+        rf"^\s*{re.escape(section_label)}:\s*",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    ).strip()
+    return text or None
+
+
+def clean_multiline_text(value: str | None) -> str | None:
+    if value is None:
+        return None
+    lines = [re.sub(r"[ \t]+", " ", line).strip() for line in str(value).splitlines()]
+    text = "\n".join(line for line in lines if line).strip()
+    if not text:
+        text = re.sub(r"\s+", " ", str(value)).strip()
+    return text or None
+
+
+def format_legacy_entries(sections: list[tuple[str, str | None]]) -> str | None:
+    body: list[str] = []
+    for label, value in sections:
+        cleaned = clean_legacy_section(value, label)
+        if cleaned:
+            body.append(f"{label}:\n{cleaned}")
+    if not body:
+        return None
+    return f"{LEGACY_ENTRIES_HEADING}\n\n" + "\n\n".join(body)
+
+
 def clean_text(value: str | None) -> str | None:
     if value is None:
         return None
@@ -124,4 +160,3 @@ def is_default_column_display_name(current: str | None, physical_name: str) -> b
 
 def default_label_from_name(name: str) -> str:
     return clean_identifier(name).replace("_", " ").title()
-

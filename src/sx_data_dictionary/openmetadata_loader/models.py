@@ -35,7 +35,24 @@ class ColumnSource(BaseModel):
     name: str
     label: str | None = None
     description: str | None = None
+    help: str | None = None
+    content: str | None = None
     source_ref: str | None = None
+
+
+class TableIndexFieldSource(BaseModel):
+    sequence: int | None = None
+    name: str
+    order: str | None = None
+    abbreviated: str | None = None
+
+
+class TableIndexSource(BaseModel):
+    name: str
+    primary: bool | None = None
+    unique: bool | None = None
+    word: bool | None = None
+    fields: list[TableIndexFieldSource] = Field(default_factory=list)
 
 
 class TableSource(BaseModel):
@@ -43,6 +60,7 @@ class TableSource(BaseModel):
     warehouse_table_name: str
     label: str | None = None
     description: str | None = None
+    indexes: list[TableIndexSource] = Field(default_factory=list)
     columns: dict[str, ColumnSource] = Field(default_factory=dict)
     source_ref: str | None = None
 

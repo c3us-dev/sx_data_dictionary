@@ -15,6 +15,7 @@ from sx_data_dictionary.openmetadata_loader.models import (
 )
 from sx_data_dictionary.openmetadata_loader.normalize import (
     build_table_fqn,
+    clean_multiline_text,
     clean_text,
     description_state,
     is_blank,
@@ -348,10 +349,10 @@ def _description_action(
 def _format_description(
     current: str | None, proposed: str | None, mode: DescriptionMode
 ) -> str | None:
-    proposed_clean = clean_text(proposed)
+    proposed_clean = clean_multiline_text(proposed)
     if not proposed_clean:
         return None
-    current_clean = clean_text(current)
+    current_clean = clean_multiline_text(current)
     if mode != DescriptionMode.APPEND_WITH_MARKER or not current_clean:
         return proposed_clean
     if LEGACY_DESCRIPTION_START in current_clean:
