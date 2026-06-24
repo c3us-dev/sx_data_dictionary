@@ -25,6 +25,7 @@ from sx_data_dictionary.openmetadata_loader.openmetadata import (
 from sx_data_dictionary.openmetadata_loader.normalize import (
     build_table_fqn,
     clean_description,
+    format_legacy_entries,
     normalize_column_name,
     normalize_table_name,
 )
@@ -74,11 +75,34 @@ def test_sqlite_source_parsing(tmp_path: Path) -> None:
             description TEXT,
             content TEXT
         );
+        CREATE TABLE table_indexes (
+            id INTEGER PRIMARY KEY,
+            module_code TEXT,
+            table_id TEXT,
+            index_name TEXT,
+            is_primary INTEGER,
+            is_unique INTEGER,
+            is_word INTEGER,
+            source_file TEXT
+        );
+        CREATE TABLE table_index_fields (
+            id INTEGER PRIMARY KEY,
+            index_id INTEGER,
+            field_sequence INTEGER,
+            field_name TEXT,
+            field_order TEXT,
+            abbreviated TEXT
+        );
         INSERT INTO tables VALUES ('addon', 'addon', 'MI', 'ADDON - Addon Data');
         INSERT INTO fields VALUES (
             1, 'MI', 'addon', 'addon_addonamt', 'Addon Amt', '',
             'Description: dollar amount', ''
         );
+        INSERT INTO table_indexes VALUES (
+            1, 'MI', 'addon', 'k-addon', 1, 1, 0, 'addon_k-addon.htm'
+        );
+        INSERT INTO table_index_fields VALUES (1, 1, 1, 'cono', 'Ascending', 'no');
+        INSERT INTO table_index_fields VALUES (2, 1, 2, 'addonno', 'Ascending', 'no');
         """
     )
     conn.commit()
@@ -88,8 +112,16 @@ def test_sqlite_source_parsing(tmp_path: Path) -> None:
 
     assert sources["addon"].label == "Addon Data"
     assert sources["addon"].warehouse_table_name == "csd_addon"
+    assert sources["addon"].description == format_legacy_entries(
+        [
+            ("Primary Key", "k-addon: cono, addonno"),
+            ("Indexes", "k-addon (primary, unique): cono, addonno"),
+        ]
+    )
     assert sources["addon"].columns["addonamt"].label == "Addon Amt"
-    assert sources["addon"].columns["addonamt"].description == "dollar amount"
+    assert sources["addon"].columns["addonamt"].description == format_legacy_entries(
+        [("Description", "dollar amount"), ("Help", ""), ("Content", "")]
+    )
 
 
 def test_json_and_csv_source_parsing(tmp_path: Path) -> None:
@@ -107,6 +139,8 @@ def test_json_and_csv_source_parsing(tmp_path: Path) -> None:
                                     "addon_addonamt": {
                                         "label": "Addon Amt",
                                         "description": "Description: dollar amount",
+                                        "help": "short help",
+                                        "content": "Content: 1 = one",
                                     }
                                 },
                             }
@@ -117,7 +151,15 @@ def test_json_and_csv_source_parsing(tmp_path: Path) -> None:
         ),
         encoding="utf-8",
     )
-    assert load_annotations_json(json_path)["addon"].columns["addonamt"].description == "dollar amount"
+    assert load_annotations_json(json_path)["addon"].columns["addonamt"].description == (
+        "Legacy Data Dictionary Entries:\n\n"
+        "Description:\n"
+        "dollar amount\n\n"
+        "Help:\n"
+        "short help\n\n"
+        "Content:\n"
+        "1 = one"
+    )
 
     csv_path = tmp_path / "dictionary.csv"
     with csv_path.open("w", encoding="utf-8", newline="") as handle:
@@ -204,6 +246,41 @@ def test_overwrite_requires_confirmation(tmp_path: Path) -> None:
 
     options.confirm_overwrite = CONFIRM_OVERWRITE_PHRASE
     validate_overwrite_options(options)
+
+
+def test_plan_preserves_multiline_legacy_descriptions(tmp_path: Path) -> None:
+    options = LoaderOptions(
+        om_url="http://localhost:8585/api",
+        data_product_fqn="CSD Core.Silver",
+        input_path=tmp_path / "x.csv",
+    )
+    table_fqn = "QAT Data Warehouse.dw.core.csd_addon"
+    source = _source_table("addon")
+    source.columns["addonamt"].description = (
+        "Legacy Data Dictionary Entries:\n\n"
+        "Description:\n"
+        "dollar amount\n\n"
+        "Content:\n"
+        "0 = No\n"
+        "1 = Yes"
+    )
+    plan = generate_plan(
+        options=options,
+        sources={"addon": source},
+        data_product_table_fqns={table_fqn},
+        current_tables={
+            table_fqn: {
+                "id": "table-id",
+                "name": "csd_addon",
+                "displayName": "csd_addon",
+                "columns": [{"name": "addonamt", "description": ""}],
+            }
+        },
+    )
+
+    column_row = next(row for row in plan.rows if row.entity_type == "column")
+    assert "Description:\ndollar amount" in column_row.proposed_description
+    assert "0 = No\n1 = Yes" in column_row.proposed_description
 
 
 def test_patch_payload_preserves_column_fields(tmp_path: Path) -> None:

@@ -256,6 +256,21 @@ blank/default display names and blank descriptions, writes a backup before any
 PATCH, and skips curated metadata unless overwrite flags and the typed
 confirmation phrase are provided.
 
+### Legacy Content Loaded
+
+Column descriptions are written with the heading
+`Legacy Data Dictionary Entries:` and include every populated legacy section
+available in the annotation SQLite. Existing SQLite files include `Description`,
+`Help`, and `Content`; newly regenerated SQLite files also include field
+metadata such as `Type`, `Format`, `Decimals`, `Initial`, `Extent`, `Mandatory`,
+`Val Exp`, `Val Msg`, `Trigger`, and field-level `Indexes`. This keeps code-list
+explanations and short legacy help text in OpenMetadata so users can prune and
+rewrite it there.
+
+Newly regenerated annotation SQLite files also include table index metadata from
+the original dictionary HTML. When present, the loader adds `Primary Key` and
+`Indexes` sections to blank table descriptions.
+
 ### Safety Defaults
 
 - The default command is `plan`; it writes no OpenMetadata changes.
