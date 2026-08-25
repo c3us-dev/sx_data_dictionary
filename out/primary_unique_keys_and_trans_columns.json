@@ -1,0 +1,9374 @@
+{
+  "abc": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "recalc_last"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_sec_time",
+      "trans_user"
+    ]
+  },
+  "activities": {
+    "pk_columns": [
+      "cono",
+      "activityid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "addon": {
+    "pk_columns": [
+      "cono",
+      "ordertype",
+      "orderno",
+      "ordersuf",
+      "addonno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "aodata": {
+    "pk_columns": [
+      "cono",
+      "recordtype",
+      "fieldname"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apeba": {
+    "pk_columns": [
+      "cono",
+      "jrnlno",
+      "setno",
+      "addonno",
+      "pono",
+      "posuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apebc": {
+    "pk_columns": [
+      "cono",
+      "jrnlno",
+      "setno",
+      "pono",
+      "posuf",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apebt": {
+    "pk_columns": [
+      "cono",
+      "batchnm",
+      "setno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transcd",
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apef": {
+    "pk_columns": [
+      "cono",
+      "statustype",
+      "vendno",
+      "termstype",
+      "apinvno",
+      "jrnlno",
+      "setno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apei": {
+    "pk_columns": [
+      "cono",
+      "groupnm",
+      "createddt",
+      "groupseqno",
+      "invseqno"
+    ],
+    "transaction_columns": [
+      "transcd",
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apeia": {
+    "pk_columns": [
+      "cono",
+      "groupnm",
+      "createddt",
+      "groupseqno",
+      "addonseqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apeid": {
+    "pk_columns": [
+      "cono",
+      "groupnm",
+      "createddt",
+      "groupseqno",
+      "detailseqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apeie": {
+    "pk_columns": [
+      "cono",
+      "groupnm",
+      "createddt",
+      "groupseqno",
+      "tablenm",
+      "invseqno",
+      "errorseqno"
+    ],
+    "transaction_columns": [
+      "transcd",
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apeig": {
+    "pk_columns": [
+      "cono",
+      "groupnm",
+      "createddt",
+      "groupseqno",
+      "glseqno"
+    ],
+    "transaction_columns": [
+      "transcd",
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apeis": {
+    "pk_columns": [
+      "cono",
+      "groupnm",
+      "createddt",
+      "groupseqno",
+      "detailseqno",
+      "serialno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apemf": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apemm": {
+    "pk_columns": [
+      "cono",
+      "jrnlno",
+      "setno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apet": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transcd",
+      "transdt",
+      "transdttmz",
+      "transno",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apeta": {
+    "pk_columns": [
+      "cono",
+      "vendno",
+      "bankno",
+      "achinvno",
+      "achinvsuf"
+    ],
+    "transaction_columns": [
+      "transcd",
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "apsd": {
+    "pk_columns": [
+      "cono",
+      "srcrowpointer",
+      "shipviaty"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apsf": {
+    "pk_columns": [
+      "cono",
+      "taxyear"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transmittername",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apsp": {
+    "pk_columns": [
+      "cono",
+      "vendno",
+      "whse",
+      "prodline",
+      "yr"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apss": {
+    "pk_columns": [
+      "cono",
+      "vendno",
+      "shipfmno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transferloc",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apss_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "apsv": {
+    "pk_columns": [
+      "cono",
+      "vendno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transferloc",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "apsv_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "araos": {
+    "pk_columns": [
+      "cono",
+      "recty",
+      "state",
+      "custno",
+      "shipto",
+      "groupid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arbcb": {
+    "pk_columns": [
+      "cono",
+      "batch"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transmission",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arbch": {
+    "pk_columns": [
+      "cono",
+      "batch",
+      "custno",
+      "checkno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transmission",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arbcl": {
+    "pk_columns": [
+      "cono",
+      "batch",
+      "custno",
+      "checkno",
+      "invno",
+      "invsuf",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arbclw": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arbct": {
+    "pk_columns": [
+      "cono",
+      "transmission"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transmission",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arbsi": {
+    "pk_columns": [
+      "imptype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arbsid": {
+    "pk_columns": [
+      "imptype",
+      "recno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arebt": {
+    "pk_columns": [
+      "cono",
+      "batchnm",
+      "setno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transcd",
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "aret": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transcd",
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "aretp": {
+    "pk_columns": [
+      "rowpointer"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transno",
+      "transproc"
+    ]
+  },
+  "arett": {
+    "pk_columns": [
+      "cono",
+      "recty",
+      "taxgroup",
+      "statecd",
+      "countycd",
+      "citycd",
+      "othercd",
+      "taxexemptcd",
+      "orderno",
+      "ordersuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "arlspi": {
+    "pk_columns": [
+      "cono",
+      "referno",
+      "invno"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "arlspp": {
+    "pk_columns": [
+      "cono",
+      "referno"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "arsa": {
+    "pk_columns": [
+      "cono",
+      "custno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arsb": {
+    "pk_columns": [
+      "cono",
+      "billingtype",
+      "billingprimarykey",
+      "billingsecondarykey"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arsc": {
+    "pk_columns": [
+      "cono",
+      "custno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transferloc",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arsc_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "arscl": {
+    "pk_columns": [
+      "cono",
+      "type",
+      "custno",
+      "shipto"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arsd": {
+    "pk_columns": [
+      "cono",
+      "custno",
+      "shipto",
+      "mediacd",
+      "cardno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arsde": {
+    "pk_columns": [
+      "encseqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arsg": {
+    "pk_columns": [
+      "cono",
+      "groupid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arsg_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "arsl": {
+    "pk_columns": [
+      "cono",
+      "lockboxno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arso": {
+    "pk_columns": [
+      "cono",
+      "custno",
+      "custtype",
+      "prodcat"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arsop": {
+    "pk_columns": [
+      "cono",
+      "custno",
+      "shipto",
+      "certifiedtype",
+      "certifiedname"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arsp": {
+    "pk_columns": [
+      "cono",
+      "custno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arspt": {
+    "pk_columns": [
+      "cono",
+      "custno",
+      "shipto",
+      "pricetype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arsrt": {
+    "pk_columns": [
+      "cono",
+      "custno",
+      "shipto",
+      "rebatety"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arss": {
+    "pk_columns": [
+      "cono",
+      "custno",
+      "shipto"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transferloc",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "arss_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "arst": {
+    "pk_columns": [
+      "cono",
+      "srcrowpointer",
+      "shiptogrp"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "asprogram": {
+    "pk_columns": [
+      "programname"
+    ],
+    "transaction_columns": []
+  },
+  "audit": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "authpoints": {
+    "pk_columns": [
+      "ourproc",
+      "key1",
+      "key2",
+      "mode",
+      "transtype",
+      "trmgrlang"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "authsecure": {
+    "pk_columns": [
+      "cono",
+      "oper2",
+      "ourproc",
+      "key1",
+      "key2",
+      "mode",
+      "transtype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "authtrans": {
+    "pk_columns": [
+      "cono",
+      "oper2",
+      "attemptdt",
+      "attempttm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "autodrpcfg": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "printer"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "baaa": {
+    "pk_columns": [
+      "cono",
+      "triggernm",
+      "analysisnm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "barcodedtl": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "vendor_id",
+      "barcode_id",
+      "attribute_name"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "barcodemst": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "vendor_id",
+      "barcode_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "basa": {
+    "pk_columns": [
+      "analysisnm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "batchcalldata": {
+    "pk_columns": [
+      "rowpointer"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bcswmst": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "sys_name",
+      "app_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "bded": {
+    "pk_columns": [
+      "cono",
+      "srcrowpointer",
+      "delvduedt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bdet": {
+    "pk_columns": [
+      "rowpointer"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bdsc": {
+    "pk_columns": [
+      "cono",
+      "truckid",
+      "comptid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bdsr": {
+    "pk_columns": [
+      "cono",
+      "truckid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bdst": {
+    "pk_columns": [
+      "cono",
+      "arsrcrowpointer",
+      "tankid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bin_size": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "loc_type"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "binei": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "ei_type",
+      "ei_id",
+      "bin_num"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "binmst": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "bin_num"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "birbd": {
+    "pk_columns": [
+      "cono",
+      "kpigroup",
+      "gaugeno",
+      "pagenum",
+      "slicerdata",
+      "row1data",
+      "row2data",
+      "row3data",
+      "col1data",
+      "col2data",
+      "col3data"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "birbg": {
+    "pk_columns": [
+      "cono",
+      "kpigroup",
+      "gaugeno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bisg": {
+    "pk_columns": [
+      "cono",
+      "kpigroup",
+      "gaugeno",
+      "whse"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bisk": {
+    "pk_columns": [
+      "cono",
+      "kpi"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bism": {
+    "pk_columns": [
+      "cono",
+      "type",
+      "measure"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bisms": {
+    "pk_columns": [
+      "cono",
+      "type",
+      "measure",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bisv": {
+    "pk_columns": [
+      "cono",
+      "value_name",
+      "key1",
+      "whse"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bpeh": {
+    "pk_columns": [
+      "cono",
+      "bpid",
+      "revno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "bpehc": {
+    "pk_columns": [
+      "cono",
+      "bpid",
+      "revno",
+      "custpros",
+      "cptype",
+      "sentdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bpehj": {
+    "pk_columns": [
+      "cono",
+      "bpid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bpehv": {
+    "pk_columns": [
+      "cono",
+      "bpid",
+      "vendno",
+      "shipfmno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bpel": {
+    "pk_columns": [
+      "cono",
+      "bpid",
+      "revno",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bpelc": {
+    "pk_columns": [
+      "cono",
+      "bpid",
+      "revno",
+      "lineno",
+      "convertty",
+      "convertno",
+      "ordersuf",
+      "oelineno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "bpelv": {
+    "pk_columns": [
+      "cono",
+      "bpid",
+      "revno",
+      "vendno",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bpsc": {
+    "pk_columns": [
+      "cono",
+      "itemid",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bpsi": {
+    "pk_columns": [
+      "cono",
+      "itemid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "bpsp": {
+    "pk_columns": [
+      "cono",
+      "phaseid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "carrier": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "carrier_id"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "carrier_service": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "carrier_id",
+      "service"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "carrierei": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "ei_type",
+      "ei_id",
+      "carrier_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "carton_size": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "box_id",
+      "cube"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "cartondtl": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "cartonei": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "ei_type",
+      "ei_id",
+      "carton_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "cartonmst": {
+    "pk_columns": [
+      "carton_num"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "ccpreauth": {
+    "pk_columns": [
+      "cono",
+      "custno",
+      "shipto",
+      "whse",
+      "recordno"
+    ],
+    "transaction_columns": [
+      "transcd",
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ccrecover": {
+    "pk_columns": [
+      "rowpointer"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "cctrans": {
+    "pk_columns": [
+      "recordid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "cfgdata": {
+    "pk_columns": [
+      "cono",
+      "ordertype",
+      "orderno",
+      "ordersuf",
+      "lineno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "cmas": {
+    "pk_columns": [
+      "slsrepin",
+      "slsrepout",
+      "prostype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "cmcet": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "cmcsq": {
+    "pk_columns": [
+      "campaigncd",
+      "pageno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "cmet": {
+    "pk_columns": [
+      "prosno",
+      "sequenceno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "cmfu": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "cmfus": {
+    "pk_columns": [
+      "slsrep"
+    ],
+    "transaction_columns": []
+  },
+  "cmpmst": {
+    "pk_columns": [
+      "co_num"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "cmrp": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "cmsa": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "cmsc": {
+    "pk_columns": [
+      "campaigncd"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "cmscs": {
+    "pk_columns": [
+      "campaigncd",
+      "scriptcd",
+      "pageno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "cmsi": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "cmsl": {
+    "pk_columns": [
+      "lettercd"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "cmsn": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "cmsp": {
+    "pk_columns": [
+      "prosno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "cmsq": {
+    "pk_columns": [
+      "prosno",
+      "proposalno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "cmst": {
+    "pk_columns": [
+      "codeiden",
+      "codeval",
+      "slsrep"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "com": {
+    "pk_columns": [
+      "cono",
+      "comtype",
+      "orderno",
+      "ordersuf",
+      "lineno",
+      "printfl"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "comdet": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "comment": {
+    "pk_columns": [
+      "type",
+      "id",
+      "line",
+      "line_sequence",
+      "comment_line"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "commst": {
+    "pk_columns": [
+      "record_type",
+      "version"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_type",
+      "trans_user"
+    ]
+  },
+  "contacts": {
+    "pk_columns": [
+      "cono",
+      "contactid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "contacts-methods": {
+    "pk_columns": [
+      "cono",
+      "contactid",
+      "methodkey",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "contacts-roles": {
+    "pk_columns": [
+      "cono",
+      "roletype",
+      "primarykey",
+      "secondarykey",
+      "contactid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "contacts_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "conv": {
+    "pk_columns": [
+      "prognm",
+      "version",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transtm"
+    ]
+  },
+  "convert": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "cor_inbox_entry": {
+    "pk_columns": [
+      "c_id"
+    ],
+    "transaction_columns": []
+  },
+  "cor_inbox_headers": {
+    "pk_columns": [
+      "c_id"
+    ],
+    "transaction_columns": []
+  },
+  "cor_outbox_entry": {
+    "pk_columns": [
+      "c_id"
+    ],
+    "transaction_columns": []
+  },
+  "cor_outbox_headers": {
+    "pk_columns": [
+      "c_id"
+    ],
+    "transaction_columns": []
+  },
+  "cor_property": {
+    "pk_columns": [
+      "c_id"
+    ],
+    "transaction_columns": []
+  },
+  "core_component": {
+    "pk_columns": [
+      "ComponentId"
+    ],
+    "transaction_columns": []
+  },
+  "core_componentmethod": {
+    "pk_columns": [
+      "ComponentMethodId"
+    ],
+    "transaction_columns": []
+  },
+  "core_context": {
+    "pk_columns": [
+      "ContextId"
+    ],
+    "transaction_columns": []
+  },
+  "core_contextstore": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "core_language": {
+    "pk_columns": [
+      "LanguageId"
+    ],
+    "transaction_columns": []
+  },
+  "core_messagedata": {
+    "pk_columns": [
+      "MessageId"
+    ],
+    "transaction_columns": []
+  },
+  "core_nonce": {
+    "pk_columns": [
+      "consumerkey",
+      "recvnonce"
+    ],
+    "transaction_columns": [
+      "transdttmz"
+    ]
+  },
+  "core_permission": {
+    "pk_columns": [
+      "PermissionId"
+    ],
+    "transaction_columns": []
+  },
+  "core_session": {
+    "pk_columns": [
+      "sessionid"
+    ],
+    "transaction_columns": []
+  },
+  "core_tenantlink": {
+    "pk_columns": [
+      "externalguid"
+    ],
+    "transaction_columns": [
+      "transdttmz"
+    ]
+  },
+  "core_usergroup": {
+    "pk_columns": [
+      "UserGroupId"
+    ],
+    "transaction_columns": []
+  },
+  "core_userlogin": {
+    "pk_columns": [
+      "UserLoginID"
+    ],
+    "transaction_columns": []
+  },
+  "counthistory": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "abs_num",
+      "count_type",
+      "count_date",
+      "bin_num"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "crerb": {
+    "pk_columns": [
+      "cono",
+      "bankno"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "crerm": {
+    "pk_columns": [
+      "cono",
+      "srcrowpointer",
+      "cretrowpointer"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "crerr": {
+    "pk_columns": [
+      "cono",
+      "bankno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "cret": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "crsb": {
+    "pk_columns": [
+      "cono",
+      "bankno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transrouteno",
+      "transtm"
+    ]
+  },
+  "crsr": {
+    "pk_columns": [
+      "cono",
+      "bankno",
+      "rulename"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "cycle_cnt": {
+    "pk_columns": [
+      "id"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "dealgd": {
+    "pk_columns": [
+      "cono",
+      "groupnm",
+      "gdtype",
+      "gdentity"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "dealgh": {
+    "pk_columns": [
+      "cono",
+      "groupnm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "dealpd": {
+    "pk_columns": [
+      "cono",
+      "dealrecno",
+      "pdtype",
+      "pdentity",
+      "varfl"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "dealph": {
+    "pk_columns": [
+      "cono",
+      "qualtype",
+      "qualentity",
+      "whse",
+      "pricetype",
+      "startdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "depmst": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "dept_num"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "dlqueue": {
+    "pk_columns": [
+      "srcrowid",
+      "srctable",
+      "eventtype"
+    ],
+    "transaction_columns": [
+      "transdtms"
+    ]
+  },
+  "dockmstr": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "dock_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "drp_log": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "rule_code",
+      "log_seq"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "drp_ord": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "drp_rules": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "rule_code"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "edia": {
+    "pk_columns": [
+      "cono",
+      "editype",
+      "statustype",
+      "keyfielda",
+      "keyfieldb",
+      "keyfieldc",
+      "keyfieldd",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "edidata": {
+    "pk_columns": [
+      "cono",
+      "edifilename",
+      "section",
+      "secseq",
+      "docid"
+    ],
+    "transaction_columns": [
+      "transdata",
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "edie": {
+    "pk_columns": [
+      "cono",
+      "batchnm",
+      "seqno",
+      "level",
+      "lineno",
+      "errseqno",
+      "docty"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "edih": {
+    "pk_columns": [
+      "cono",
+      "batchnm",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "edil": {
+    "pk_columns": [
+      "cono",
+      "batchnm",
+      "seqno",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "edsbwc": {
+    "pk_columns": [
+      "cono",
+      "claimno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "edsbwd": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "edsbwh": {
+    "pk_columns": [
+      "cono",
+      "clmdistno",
+      "clmclaimno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "edsbwl": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "edsbwm": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "edsc": {
+    "pk_columns": [
+      "transmitty",
+      "partnerid",
+      "docno",
+      "version",
+      "segment",
+      "element",
+      "loop",
+      "condvalue",
+      "condfield"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transmitty",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "edsd": {
+    "pk_columns": [
+      "transmitty",
+      "docno",
+      "version",
+      "segment",
+      "loop"
+    ],
+    "transaction_columns": [
+      "transmitty"
+    ]
+  },
+  "edss": {
+    "pk_columns": [
+      "version",
+      "segment",
+      "element"
+    ],
+    "transaction_columns": []
+  },
+  "edsv": {
+    "pk_columns": [
+      "cono",
+      "vendno",
+      "vendorid",
+      "contractno",
+      "custno",
+      "shipto",
+      "whse"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "edsx": {
+    "pk_columns": [
+      "transmitty",
+      "docno",
+      "version",
+      "pseudo"
+    ],
+    "transaction_columns": [
+      "transmitty"
+    ]
+  },
+  "ei_type": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "ei_type",
+      "ei_activefl"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "email-links": {
+    "pk_columns": [
+      "cono",
+      "doctype",
+      "primarykey",
+      "secondarykey",
+      "contactid"
+    ],
+    "transaction_columns": []
+  },
+  "empmst": {
+    "pk_columns": [
+      "emp_num"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "empmstei": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "ei_type",
+      "ei_id",
+      "emp_num"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "empproddet": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "task_id",
+      "trans_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_id",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "end_of_day": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "date_time",
+      "rec_type"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "eod_setup": {
+    "pk_columns": [
+      "co_num",
+      "wh_num"
+    ],
+    "transaction_columns": [
+      "transrptfl",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "equatecart": {
+    "pk_columns": [
+      "cono",
+      "cartid",
+      "section",
+      "originallinenumber",
+      "linenumber"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "esb_inbound_duplicate": {
+    "pk_columns": [
+      "c_message_id"
+    ],
+    "transaction_columns": []
+  },
+  "esbextradata": {
+    "pk_columns": [
+      "cono",
+      "formattype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "esbnoun": {
+    "pk_columns": [
+      "cono",
+      "noun"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "esbsingle": {
+    "pk_columns": [
+      "sequence"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "esbwlcontainer": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "ordertype",
+      "orderno",
+      "ordersuf",
+      "vaseqno",
+      "lineno",
+      "palletid",
+      "cartonid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "esbwlstath": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "ordertype",
+      "orderno",
+      "ordersuf",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "esbwlstatl": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "ordertype",
+      "orderno",
+      "ordersuf",
+      "seqno",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "event_activate": {
+    "pk_columns": [
+      "cono",
+      "triggername",
+      "eventname"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "event_setup": {
+    "pk_columns": [
+      "eventname"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "event_setup_action": {
+    "pk_columns": [
+      "cono",
+      "eventname",
+      "actionseqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "event_setup_flds": {
+    "pk_columns": [
+      "eventname",
+      "dataty",
+      "arraypos"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "event_setup_lst_actn": {
+    "pk_columns": [
+      "cono",
+      "eventname",
+      "actionseqno",
+      "listtype",
+      "listvalue"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "event_trans": {
+    "pk_columns": [
+      "cono",
+      "eventname",
+      "eventdt",
+      "eventtm",
+      "recordno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "event_trans_action": {
+    "pk_columns": [
+      "cono",
+      "eventname",
+      "eventdt",
+      "eventtm",
+      "recordno",
+      "actionseqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "event_trans_sub": {
+    "pk_columns": [
+      "cono",
+      "eventname",
+      "eventdt",
+      "eventtm",
+      "recordno",
+      "subseqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "file_retent": {
+    "pk_columns": [
+      "file_name"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "gdprctrl": {
+    "pk_columns": [
+      "rowpointer"
+    ],
+    "transaction_columns": [
+      "transdttmz"
+    ]
+  },
+  "glar": {
+    "pk_columns": [
+      "cono",
+      "revalno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "gleb": {
+    "pk_columns": [
+      "cono",
+      "function",
+      "reportnm",
+      "yr",
+      "gldivno",
+      "gldeptno",
+      "glacctno",
+      "glsubno",
+      "asofdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "gleba": {
+    "pk_columns": [
+      "cono",
+      "batchnm",
+      "setno",
+      "transno"
+    ],
+    "transaction_columns": [
+      "transcd",
+      "transno"
+    ]
+  },
+  "glebt": {
+    "pk_columns": [
+      "cono",
+      "batchnm",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transcd",
+      "transdt",
+      "transno",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "glee": {
+    "pk_columns": [
+      "cono",
+      "keyno",
+      "setno",
+      "transno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transno",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "glet": {
+    "pk_columns": [
+      "cono",
+      "jrnlno",
+      "setno",
+      "transno"
+    ],
+    "transaction_columns": [
+      "transcd",
+      "transdt",
+      "transdttmz",
+      "transno",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "gletv": {
+    "pk_columns": [
+      "cono",
+      "revalno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transcd",
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "glif": {
+    "pk_columns": [
+      "cono",
+      "groupnm",
+      "reportnm",
+      "yr",
+      "period",
+      "prtlineno"
+    ],
+    "transaction_columns": []
+  },
+  "glifa": {
+    "pk_columns": [
+      "cono",
+      "groupnm",
+      "reportnm",
+      "seqlineno",
+      "columnno",
+      "gldivno",
+      "gldeptno",
+      "glacctno",
+      "glsubno"
+    ],
+    "transaction_columns": []
+  },
+  "glsa": {
+    "pk_columns": [
+      "cono",
+      "yr",
+      "gldivno",
+      "gldeptno",
+      "glacctno",
+      "glsubno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "glsa_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "glsb": {
+    "pk_columns": [
+      "cono",
+      "yr",
+      "gldivno",
+      "gldeptno",
+      "glacctno",
+      "glsubno",
+      "revno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "glsd": {
+    "pk_columns": [
+      "cono",
+      "groupnm",
+      "setno",
+      "transno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transno",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "glsf": {
+    "pk_columns": [
+      "groupnm",
+      "swseqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "glsfm": {
+    "pk_columns": [
+      "memoryloc",
+      "percal"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "glsfw": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "glss": {
+    "pk_columns": [
+      "cono",
+      "Subledger",
+      "key1",
+      "key2",
+      "key3",
+      "key4",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "glsx": {
+    "pk_columns": [
+      "cono",
+      "currencyty",
+      "yr",
+      "acctgrp"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "hlp": {
+    "pk_columns": [
+      "ourproc",
+      "fieldnm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ibao": {
+    "pk_columns": [
+      "cono"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icama": {
+    "pk_columns": [
+      "cono",
+      "reportno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icamap": {
+    "pk_columns": [
+      "cono",
+      "reportno",
+      "whse",
+      "prod"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icamapm": {
+    "pk_columns": [
+      "cono",
+      "reportno",
+      "whse",
+      "prod",
+      "usagectrl",
+      "usgmths"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icaml": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "arpvendno",
+      "prodline"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icamld": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "arpvendno",
+      "prodline",
+      "recordtype",
+      "urcvalue"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icamu": {
+    "pk_columns": [
+      "cono",
+      "activefl",
+      "whse",
+      "buyer",
+      "prod",
+      "frozentype",
+      "frozenmmyy"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icamue": {
+    "pk_columns": [
+      "cono",
+      "activefl",
+      "whse",
+      "buyer",
+      "prod",
+      "frozentype",
+      "frozenmmyy",
+      "exctype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "iceaa": {
+    "pk_columns": [
+      "cono",
+      "transty",
+      "orderno",
+      "ordersuf",
+      "lineno",
+      "retorderno",
+      "retordersuf",
+      "retlineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transty"
+    ]
+  },
+  "iceab": {
+    "pk_columns": [
+      "cono",
+      "custno",
+      "shipto",
+      "coreprod",
+      "orderno",
+      "ordersuf",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "iceam": {
+    "pk_columns": [
+      "cono",
+      "transty",
+      "orderno",
+      "ordersuf",
+      "lineno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transty"
+    ]
+  },
+  "iceat": {
+    "pk_columns": [
+      "cono",
+      "transty",
+      "orderno",
+      "ordersuf",
+      "lineno",
+      "compseqno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transty"
+    ]
+  },
+  "iceav": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "origprod",
+      "coreprod",
+      "vendno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icecndtl": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "ordertype",
+      "ordrowpointer",
+      "lineno",
+      "seqno",
+      "cartonid"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "icecnhdr": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "cartonid"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "icecnserlot": {
+    "pk_columns": [
+      "icecndtlrowpointer",
+      "serlotty",
+      "serlotno"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "iceh": {
+    "pk_columns": [
+      "keyno"
+    ],
+    "transaction_columns": []
+  },
+  "icenh": {
+    "pk_columns": [
+      "cono",
+      "typecd",
+      "whse",
+      "prod",
+      "prodcat",
+      "seqnoh"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icenl": {
+    "pk_columns": [
+      "cono",
+      "typecd",
+      "whse",
+      "prod",
+      "prodcat",
+      "seqnoh",
+      "seqnod"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icer": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icet": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "icetc": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "prod",
+      "postdt",
+      "transtype",
+      "icseqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "icetf": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "whse",
+      "issuedt",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "iceti": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "whse",
+      "nonstockty",
+      "ordertype",
+      "orderno",
+      "ordersuf",
+      "lineno",
+      "compseqno",
+      "icseirowpointer",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "icetl": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "whse",
+      "lotno",
+      "ordertype",
+      "orderno",
+      "ordersuf",
+      "lineno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icets": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "whse",
+      "serialno",
+      "ordertype",
+      "orderno",
+      "ordersuf",
+      "lineno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsabc": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "stkoan"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsc": {
+    "pk_columns": [
+      "catalog"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsc_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "icsca": {
+    "pk_columns": [
+      "Cono",
+      "catalog",
+      "authgrp"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icscg": {
+    "pk_columns": [
+      "catalog",
+      "groupno",
+      "attrno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icscm": {
+    "pk_columns": [
+      "mfgno",
+      "name"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icscn": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "pkgid"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "icscr": {
+    "pk_columns": [
+      "cono",
+      "resno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsd": {
+    "pk_columns": [
+      "cono",
+      "whse"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsd_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "icsdd": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "drawerid"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "icsdp": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "mediacd"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icseb": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "prod",
+      "bundleid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsec": {
+    "pk_columns": [
+      "cono",
+      "rectype",
+      "prod",
+      "keyno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsecw": {
+    "pk_columns": [
+      "cono",
+      "rectype",
+      "srcrowpointer",
+      "icsecrowpointer"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "icsee": {
+    "pk_columns": [
+      "cono",
+      "custno",
+      "shipto",
+      "prod"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsef": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "prod",
+      "availfl",
+      "receiptdt",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icseg": {
+    "pk_columns": [
+      "cono",
+      "accttype",
+      "disttype",
+      "key1",
+      "key2"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icseh": {
+    "pk_columns": [
+      "msdssheetno",
+      "langcd"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsei": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "prod",
+      "primarykeydt",
+      "secondarykeydt",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsel": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "prod",
+      "lotno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icselc": {
+    "pk_columns": [
+      "cono",
+      "srcrowpointer",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsep": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "runno",
+      "binloc",
+      "prod"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsepa": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "runno",
+      "updatedt",
+      "binloc",
+      "prod"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icseps": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "runno",
+      "prod",
+      "serialno",
+      "unavailfl"
+    ],
+    "transaction_columns": []
+  },
+  "icses": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "whse",
+      "serialno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icses_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "icsesf": {
+    "pk_columns": [
+      "cono",
+      "vendno",
+      "rectype",
+      "position",
+      "data"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsess": {
+    "pk_columns": [
+      "cono",
+      "vendno",
+      "rectype",
+      "position",
+      "data"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icset": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "runno",
+      "ticketno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icseu": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "units"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsev": {
+    "pk_columns": [
+      "cono",
+      "lifocat",
+      "yr"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsew": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "whse2"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsg": {
+    "pk_columns": [
+      "groupno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsga": {
+    "pk_columns": [
+      "groupno",
+      "attrno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsgk": {
+    "pk_columns": [
+      "tag",
+      "corpid",
+      "storeid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsgn": {
+    "pk_columns": [
+      "nodeid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsgr": {
+    "pk_columns": [
+      "groupno",
+      "parentattrno",
+      "parentvalueno",
+      "childattrno",
+      "childvalueno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsgs": {
+    "pk_columns": [
+      "wordfrom",
+      "wordto"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsgv": {
+    "pk_columns": [
+      "groupno",
+      "attrno",
+      "valueno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsl": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "vendno",
+      "prodline"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsoc": {
+    "pk_columns": [
+      "cono",
+      "levelcd",
+      "custno",
+      "shipto",
+      "pricetype",
+      "whse",
+      "custtype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsoe": {
+    "pk_columns": [
+      "cono",
+      "arsrcrowpointer",
+      "state",
+      "addonno",
+      "icsrcrowpointer",
+      "startdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsou": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "prod",
+      "reasunavty"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsp": {
+    "pk_columns": [
+      "cono",
+      "prod"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsp_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "icspc": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "recordtype",
+      "srcrowpointer",
+      "startdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icspcd": {
+    "pk_columns": [
+      "srcrowpointer",
+      "icsprowpointer"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icspe": {
+    "pk_columns": [
+      "cono",
+      "srcrowpointer",
+      "state",
+      "startdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icspl": {
+    "pk_columns": [
+      "cono",
+      "type"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsplp": {
+    "pk_columns": [
+      "cono",
+      "type",
+      "prod"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icspr": {
+    "pk_columns": [
+      "cono",
+      "recordtype",
+      "restricttype",
+      "srcrowpointer",
+      "whse",
+      "startdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsprc": {
+    "pk_columns": [
+      "cono",
+      "recordtype",
+      "srcrowpointer",
+      "restrictcd",
+      "startdt",
+      "certcode"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsprt": {
+    "pk_columns": [
+      "cono",
+      "srcrowpointer",
+      "territorycd",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsr": {
+    "pk_columns": [
+      "cono",
+      "vendno",
+      "whse",
+      "prodline"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsru": {
+    "pk_columns": [
+      "cono",
+      "vendno",
+      "whse",
+      "prodline",
+      "usagelevel"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icss": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "icspecrecno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsv": {
+    "pk_columns": [
+      "cono",
+      "type",
+      "prod",
+      "vendno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icsw": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "whse"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm",
+      "transunit"
+    ]
+  },
+  "icsw_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "icswb": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "whse",
+      "binloc"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "icswu": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "whse"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm",
+      "transusage",
+      "transusage26"
+    ]
+  },
+  "inv_adj": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "adj_code"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "inv_prob": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_num",
+      "trans_proc",
+      "trans_type",
+      "trans_user"
+    ]
+  },
+  "inventory": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "inventoryei": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "ei_type",
+      "ei_id",
+      "abs_num"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "item": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "abs_num"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "item_alloc": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_num",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "item_history": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "rec_type",
+      "abs_num",
+      "stock_stat",
+      "rec_date"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "item_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "itemei": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "ei_type",
+      "ei_id",
+      "abs_num"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "jmec": {
+    "pk_columns": [
+      "cono",
+      "jobid",
+      "jobrevno",
+      "changereqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "jmech": {
+    "pk_columns": [
+      "cono",
+      "jobid",
+      "jobrevno",
+      "changereqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "jmecl": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "jmeh": {
+    "pk_columns": [
+      "cono",
+      "jobid",
+      "jobrevno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "jmehc": {
+    "pk_columns": [
+      "cono",
+      "jobid",
+      "jobrevno",
+      "custno",
+      "name"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "jmel": {
+    "pk_columns": [
+      "cono",
+      "jobid",
+      "jobrevno",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "jmelc": {
+    "pk_columns": [
+      "cono",
+      "jobid",
+      "jobrevno",
+      "custno",
+      "name",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "jmelk": {
+    "pk_columns": [
+      "cono",
+      "jobid",
+      "jobrevno",
+      "lineno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "jmelo": {
+    "pk_columns": [
+      "cono",
+      "jobid",
+      "jobrevno",
+      "lineno",
+      "seqno",
+      "ordertype",
+      "orderaltno",
+      "orderaltsuf",
+      "linealtno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "jmelp": {
+    "pk_columns": [
+      "cono",
+      "jobid",
+      "jobrevno",
+      "lineno",
+      "startdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "jmelv": {
+    "pk_columns": [
+      "cono",
+      "jobid",
+      "jobrevno",
+      "vendno",
+      "lineno",
+      "startdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "jurtax": {
+    "pk_columns": [
+      "cono",
+      "srcrowpointer",
+      "jurtype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "jurtaxdet": {
+    "pk_columns": [
+      "cono",
+      "srcrowpointer",
+      "jurid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "kitdtl": {
+    "pk_columns": [
+      "id",
+      "abs_num"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "kitmst": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "kit_num"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "kpet": {
+    "pk_columns": [
+      "cono",
+      "wono",
+      "wosuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "kpsg": {
+    "pk_columns": [
+      "cono",
+      "groupname",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "kpsk": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "kpskv": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "verno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "kpsm": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "whse",
+      "comprod"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "kpso": {
+    "pk_columns": [
+      "cono",
+      "optionname",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "kpss": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "labelei": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "ei_type",
+      "ei_id",
+      "label_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "labelmst": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "sys_name",
+      "program_name",
+      "proc_name",
+      "label_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "links": {
+    "pk_columns": [
+      "cono",
+      "type",
+      "primarykey",
+      "secondarykey",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "lostbus": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "prod",
+      "seq",
+      "postdt",
+      "transtype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "mmcolumn": {
+    "pk_columns": [
+      "cono",
+      "setname",
+      "colseqno"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "mmcriteria": {
+    "pk_columns": [
+      "cono",
+      "setname",
+      "critseqno"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "mmextract": {
+    "pk_columns": [
+      "cono",
+      "setname",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "mmextractcol": {
+    "pk_columns": [
+      "cono",
+      "setname",
+      "seqno",
+      "colseqno"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "mmhdr": {
+    "pk_columns": [
+      "cono",
+      "setname"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "movemst": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "notes": {
+    "pk_columns": [
+      "cono",
+      "notestype",
+      "primarykey",
+      "secondarykey",
+      "pageno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "notescm": {
+    "pk_columns": [
+      "notestype",
+      "primarykey",
+      "secondarykey",
+      "pageno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeai": {
+    "pk_columns": [
+      "cono",
+      "oper2"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeao": {
+    "pk_columns": [
+      "cono"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oedc": {
+    "pk_columns": [
+      "cono",
+      "typecd",
+      "key1",
+      "key2"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeds": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "equipcd"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeeda": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "drawerid",
+      "enterdttmz",
+      "oper2",
+      "updtfl"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "oeede": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "drawerid",
+      "jrnlno",
+      "setno",
+      "recfl"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc",
+      "transty"
+    ]
+  },
+  "oeedj": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "drawerid",
+      "openfl",
+      "jrnlno",
+      "oper2"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "oeeh": {
+    "pk_columns": [
+      "cono",
+      "orderno",
+      "ordersuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transferloc",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "oeeh_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "oeeha": {
+    "pk_columns": [
+      "cono",
+      "orderno",
+      "ordersuf",
+      "mediacd",
+      "cardno",
+      "transcd",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transcd",
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeehb": {
+    "pk_columns": [
+      "cono",
+      "batchnm",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "oeehbr": {
+    "pk_columns": [
+      "cono",
+      "batchnm",
+      "seqno",
+      "orderno",
+      "ordersuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeehc": {
+    "pk_columns": [
+      "cono",
+      "orderno",
+      "ordersuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeehch": {
+    "pk_columns": [
+      "cono",
+      "orderno",
+      "ordersuf",
+      "holdcd",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdttmz"
+    ]
+  },
+  "oeehcx": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeehextra": {
+    "pk_columns": [
+      "cono",
+      "orderno",
+      "ordersuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeehgc": {
+    "pk_columns": [
+      "cono",
+      "orderno",
+      "ordersuf",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "oeehp": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transty"
+    ]
+  },
+  "oeehqp": {
+    "pk_columns": [
+      "cono",
+      "orderno",
+      "ordersuf",
+      "type",
+      "typekey",
+      "vendno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeehs": {
+    "pk_columns": [
+      "cono",
+      "orderno",
+      "ordersuf",
+      "pricetype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeehta": {
+    "pk_columns": [
+      "cono",
+      "orderno",
+      "ordersuf",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeel": {
+    "pk_columns": [
+      "cono",
+      "orderno",
+      "ordersuf",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "oeelb": {
+    "pk_columns": [
+      "cono",
+      "batchnm",
+      "seqno",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeelbr": {
+    "pk_columns": [
+      "cono",
+      "batchnm",
+      "seqno",
+      "orderno",
+      "ordersuf",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeelc": {
+    "pk_columns": [
+      "cono",
+      "orderno",
+      "ordersuf",
+      "dspllineno",
+      "linetype",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeelcr": {
+    "pk_columns": [
+      "cono",
+      "crrmorderno",
+      "crrmordersuf",
+      "crrmlineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "oeelextra": {
+    "pk_columns": [
+      "cono",
+      "orderno",
+      "ordersuf",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oeelk": {
+    "pk_columns": [
+      "cono",
+      "ordertype",
+      "orderno",
+      "ordersuf",
+      "lineno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "oeelm": {
+    "pk_columns": [
+      "cono",
+      "ordertype",
+      "orderno",
+      "ordersuf",
+      "lineno",
+      "seqno",
+      "bundleid",
+      "compseqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "oeelo": {
+    "pk_columns": [
+      "cono",
+      "mstordrowpointer",
+      "lineno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "oefill": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transtype"
+    ]
+  },
+  "oeinvp": {
+    "pk_columns": [
+      "cono",
+      "oper2",
+      "reportnm",
+      "etype",
+      "orderno",
+      "ordersuf",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transtype"
+    ]
+  },
+  "oeix": {
+    "pk_columns": [
+      "cono",
+      "invdt",
+      "orderno",
+      "ordersuf",
+      "lineno",
+      "errseqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oemem": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "oepick": {
+    "pk_columns": [
+      "cono",
+      "oper2",
+      "reportnm",
+      "whse",
+      "prod",
+      "serlottype",
+      "serlotno"
+    ],
+    "transaction_columns": []
+  },
+  "oerbt": {
+    "pk_columns": [
+      "cono",
+      "type",
+      "filedt",
+      "filetm",
+      "custno",
+      "orderno",
+      "ordersuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oerc": {
+    "pk_columns": [
+      "cono",
+      "invno",
+      "invsuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oesfc": {
+    "pk_columns": [
+      "cono",
+      "recordtype",
+      "srcrowpointer"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "oesfr": {
+    "pk_columns": [
+      "cono",
+      "recordtype",
+      "srcrowpointer",
+      "seqno",
+      "rulename"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "oesfw": {
+    "pk_columns": [
+      "cono",
+      "icsdrowpointer",
+      "recordtype",
+      "srcrowpointer"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "oesm": {
+    "pk_columns": [
+      "cono",
+      "apsvrowpointer",
+      "icsdrowpointer",
+      "arscrowpointer",
+      "sastarowpointer",
+      "prodty",
+      "prodtyrowpointer",
+      "startdt",
+      "recno"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "oesml": {
+    "pk_columns": [
+      "cono",
+      "srcrowpointer",
+      "listty",
+      "listrowpointer"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "oessd": {
+    "pk_columns": [
+      "cono",
+      "arrowpointer",
+      "rectype",
+      "srcrowpointer"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oessre": {
+    "pk_columns": [
+      "cono",
+      "recordtype",
+      "custrowpointer",
+      "srcrowpointer"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "oimea": {
+    "pk_columns": [
+      "person",
+      "apptdt",
+      "appttm"
+    ],
+    "transaction_columns": []
+  },
+  "oimem": {
+    "pk_columns": [
+      "person",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oimes": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oimet": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "oimsf": {
+    "pk_columns": [
+      "person",
+      "itname"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oimsg": {
+    "pk_columns": [
+      "pergroup"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oimsp": {
+    "pk_columns": [
+      "person"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oimst": {
+    "pk_columns": [
+      "codeiden",
+      "codeval"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "orddtl": {
+    "pk_columns": [
+      "id",
+      "line",
+      "line_sequence"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "orddtl_status": {
+    "pk_columns": [
+      "code"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "order_class": {
+    "pk_columns": [
+      "code"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "order_type": {
+    "pk_columns": [
+      "code"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "ordhdr": {
+    "pk_columns": [
+      "id"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "ordhdr_status": {
+    "pk_columns": [
+      "code"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "oteh": {
+    "pk_columns": [
+      "cono",
+      "trackno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "oteph": {
+    "pk_columns": [
+      "cono",
+      "trackno",
+      "pono",
+      "posuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "otepl": {
+    "pk_columns": [
+      "cono",
+      "trackno",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "otevh": {
+    "pk_columns": [
+      "cono",
+      "vesselno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "otevl": {
+    "pk_columns": [
+      "cono",
+      "vesselno",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "palletdet": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "palletmst": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "pallet_id"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "parameters": {
+    "pk_columns": [
+      "co_num",
+      "wh_num"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "pdar": {
+    "pk_columns": [
+      "cono",
+      "methodno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pdenh": {
+    "pk_columns": [
+      "cono",
+      "orderno",
+      "ordersuf",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "pdenl": {
+    "pk_columns": [
+      "srcrowpointer",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "pder": {
+    "pk_columns": [
+      "cono",
+      "orderno",
+      "ordersuf",
+      "lineno",
+      "seqno",
+      "rebatecd",
+      "pdersuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pderc": {
+    "pk_columns": [
+      "cono",
+      "intclaimno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pderv": {
+    "pk_columns": [
+      "cono",
+      "intclaimno",
+      "claimseqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pdsa": {
+    "pk_columns": [
+      "autotype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pdsc": {
+    "pk_columns": [
+      "cono",
+      "levelcd",
+      "whse",
+      "custno",
+      "custtype",
+      "prod",
+      "units",
+      "startdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pdsc_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "pdscc": {
+    "pk_columns": [
+      "cono",
+      "pdrecno",
+      "channel"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transtm"
+    ]
+  },
+  "pdscm": {
+    "pk_columns": [
+      "cono",
+      "modifiernm",
+      "whse"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pdsf": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "prod",
+      "effectdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pdsn": {
+    "pk_columns": [
+      "cono",
+      "levelcd",
+      "apsvrowpointer",
+      "custrowpointer",
+      "prodrowpointer",
+      "rebsubty",
+      "whse",
+      "startdt",
+      "transtype",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc",
+      "transtype"
+    ]
+  },
+  "pdsr": {
+    "pk_columns": [
+      "cono",
+      "codeid",
+      "levelkey",
+      "vendno",
+      "rebsubty",
+      "custno",
+      "shipto",
+      "custrebty",
+      "whse",
+      "startdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pdsra": {
+    "pk_columns": [
+      "cono",
+      "methodno",
+      "vendno",
+      "altprodgrp",
+      "custrebty",
+      "whse",
+      "startdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pdss": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "custptype",
+      "pricetype",
+      "startdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pdst": {
+    "pk_columns": [
+      "cono",
+      "codeiden",
+      "codeval"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pdsv": {
+    "pk_columns": [
+      "cono",
+      "vendno",
+      "prod",
+      "startdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pdsvc": {
+    "pk_columns": [
+      "cono",
+      "contractno",
+      "levelcd",
+      "whse",
+      "vendno",
+      "prod",
+      "unit",
+      "startdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pdsvcd": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "vendno",
+      "shipfmno",
+      "prod",
+      "prodline",
+      "startdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pdsvtr": {
+    "pk_columns": [
+      "cono",
+      "typecd",
+      "orderno",
+      "ordersuf",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pick": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "pmep": {
+    "pk_columns": [
+      "cono",
+      "ordertype",
+      "orderno",
+      "ordersuf",
+      "shpkgno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pmes": {
+    "pk_columns": [
+      "cono",
+      "shipreqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pmsb": {
+    "pk_columns": [
+      "cono",
+      "specific",
+      "type",
+      "carrierid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pmsc": {
+    "pk_columns": [
+      "carrierid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pmsd": {
+    "pk_columns": [
+      "dest"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pmsdz": {
+    "pk_columns": [
+      "dest",
+      "zipcd"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pmsg": {
+    "pk_columns": [
+      "gsind"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pmsr": {
+    "pk_columns": [
+      "ratetblno",
+      "zone"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pmss": {
+    "pk_columns": [
+      "cono",
+      "shippingpt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pmst": {
+    "pk_columns": [
+      "tier",
+      "zone"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pmsub": {
+    "pk_columns": [
+      "cono",
+      "boxname"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pmsv": {
+    "pk_columns": [
+      "carrierid",
+      "servtype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pmsz": {
+    "pk_columns": [
+      "carrierid",
+      "service",
+      "begorgzip",
+      "endorgzip",
+      "begdestzip",
+      "enddestzip"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "poao": {
+    "pk_columns": [
+      "cono"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "poeh": {
+    "pk_columns": [
+      "cono",
+      "pono",
+      "posuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transferloc",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "poeh_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "poehb": {
+    "pk_columns": [
+      "cono",
+      "shipmentid",
+      "pono",
+      "posuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "poehe": {
+    "pk_columns": [
+      "cono",
+      "pono",
+      "posuf",
+      "edicd",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "poei": {
+    "pk_columns": [
+      "cono",
+      "jrnlno",
+      "pono",
+      "posuf",
+      "lineno"
+    ],
+    "transaction_columns": []
+  },
+  "poel": {
+    "pk_columns": [
+      "cono",
+      "pono",
+      "posuf",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "poel_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "poela": {
+    "pk_columns": [
+      "cono",
+      "jrnlno",
+      "setno",
+      "addonno",
+      "pono",
+      "posuf",
+      "lineno",
+      "compseqno",
+      "bundleid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "poelb": {
+    "pk_columns": [
+      "cono",
+      "shipmentid",
+      "pono",
+      "posuf",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "poelc": {
+    "pk_columns": [
+      "cono",
+      "jrnlno",
+      "setno",
+      "pono",
+      "posuf",
+      "lineno",
+      "compseqno",
+      "bundleid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "poele": {
+    "pk_columns": [
+      "cono",
+      "pono",
+      "posuf",
+      "lineno",
+      "edicd",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "poelo": {
+    "pk_columns": [
+      "cono",
+      "pono",
+      "posuf",
+      "lineno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "poer": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "poerad": {
+    "pk_columns": [
+      "cono",
+      "reportno",
+      "lineno",
+      "seqno",
+      "whse"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "poerah": {
+    "pk_columns": [
+      "cono",
+      "reportno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transferloc",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "poeral": {
+    "pk_columns": [
+      "cono",
+      "reportno",
+      "lineno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "poerao": {
+    "pk_columns": [
+      "cono",
+      "reportno",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "printmst": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "printer_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "prod_stg_dtl": {
+    "pk_columns": [
+      "id",
+      "line"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "prod_stg_mst": {
+    "pk_columns": [
+      "id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "prodcat": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "prodcat"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "ptxediao": {
+    "pk_columns": [
+      "docty"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ptxedidata": {
+    "pk_columns": [
+      "cono",
+      "edifilename",
+      "docid",
+      "section",
+      "secseq",
+      "releasefl"
+    ],
+    "transaction_columns": []
+  },
+  "ptxedimsg": {
+    "pk_columns": [
+      "cono",
+      "docty",
+      "docid",
+      "section",
+      "secseq",
+      "msgno",
+      "extmsg"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ptxet": {
+    "pk_columns": [
+      "cono",
+      "custorderno",
+      "custordersuf",
+      "vendno",
+      "vendshipfmno",
+      "pono",
+      "posuf",
+      "vendorderno",
+      "vendordersuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ptxetdet": {
+    "pk_columns": [
+      "cono",
+      "vendorderno",
+      "vendordersuf",
+      "vendorderln"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ptxfee": {
+    "pk_columns": [
+      "ptxfeeid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ptxqueue": {
+    "pk_columns": [
+      "rowpointer"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ptxqueuedet": {
+    "pk_columns": [
+      "srcrowpointer",
+      "orderno",
+      "ordersuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ptxrouterule": {
+    "pk_columns": [
+      "cono",
+      "keytype",
+      "vendno",
+      "shipfmno",
+      "srcrowpointer",
+      "custrowpointer",
+      "shiptorowpointer"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ptxrouting": {
+    "pk_columns": [
+      "cono",
+      "custno",
+      "shipto",
+      "prodcat",
+      "prod",
+      "hierarchy",
+      "vendno",
+      "shipfmno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ptxsamsg": {
+    "pk_columns": [
+      "msgno",
+      "trmgrlang"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ptxtransaddon": {
+    "pk_columns": [
+      "cono",
+      "distpartnerid",
+      "distinvno",
+      "distinvsuf",
+      "distinvseqno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ptxtransaddr": {
+    "pk_columns": [
+      "cono",
+      "distpartnerid",
+      "distinvno",
+      "distinvsuf",
+      "distinvseqno",
+      "addrtype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ptxtranshdr": {
+    "pk_columns": [
+      "cono",
+      "distpartnerid",
+      "distinvno",
+      "distinvsuf",
+      "distinvseqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "ptxtransln": {
+    "pk_columns": [
+      "cono",
+      "distpartnerid",
+      "distinvno",
+      "distinvsuf",
+      "distinvseqno",
+      "distinvlineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ptxtransnotes": {
+    "pk_columns": [
+      "cono",
+      "distpartnerid",
+      "distinvno",
+      "distinvsuf",
+      "distinvseqno",
+      "distinvlineno",
+      "noteseqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_adminlog": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_adminnotes": {
+    "pk_columns": [
+      "cono",
+      "subject"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_apeba": {
+    "pk_columns": [
+      "cono",
+      "batchnm",
+      "setno",
+      "addonno",
+      "pono",
+      "posuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transtm"
+    ]
+  },
+  "pv_apebc": {
+    "pk_columns": [
+      "cono",
+      "batchnm",
+      "setno",
+      "pono",
+      "posuf",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transtm"
+    ]
+  },
+  "pv_attachments": {
+    "pk_columns": [
+      "DocID"
+    ],
+    "transaction_columns": []
+  },
+  "pv_exratelog": {
+    "pk_columns": [
+      "cono",
+      "currencyty",
+      "ratefield",
+      "changedt",
+      "changetm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_images": {
+    "pk_columns": [
+      "cono",
+      "keytype",
+      "keyvalue1",
+      "keyvalue2",
+      "chunk"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_jmln": {
+    "pk_columns": [
+      "cono",
+      "jobid",
+      "jobrevno",
+      "lineno"
+    ],
+    "transaction_columns": []
+  },
+  "pv_oeln": {
+    "pk_columns": [
+      "cono",
+      "batchnm",
+      "orderno",
+      "ordersuf",
+      "lineno"
+    ],
+    "transaction_columns": []
+  },
+  "pv_pdmhdr": {
+    "pk_columns": [
+      "Cono",
+      "SetID"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_pdmline": {
+    "pk_columns": [
+      "cono",
+      "SetID",
+      "SeqNo"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_pdmmatrix": {
+    "pk_columns": [
+      "Destination",
+      "Source"
+    ],
+    "transaction_columns": []
+  },
+  "pv_pdsps": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "prod",
+      "pricesheet"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_pdspsu": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "prod",
+      "unit",
+      "pricesheet"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_poln": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "pv_recovery": {
+    "pk_columns": [
+      "cono",
+      "oper2",
+      "functionname",
+      "jrnlno",
+      "recoverydata"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_samb": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_sapbm": {
+    "pk_columns": [
+      "queue_name",
+      "queue_no"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_sapbq": {
+    "pk_columns": [
+      "queue_name"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_sassm": {
+    "pk_columns": [
+      "MenuSet",
+      "FunctionName",
+      "trmgrlang"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_sassm_types": {
+    "pk_columns": [
+      "type_code"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_secure": {
+    "pk_columns": [
+      "cono",
+      "oper2",
+      "FunctionName",
+      "MenuSet"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_shoplist": {
+    "pk_columns": [
+      "cono",
+      "oper2",
+      "prod"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_sroln": {
+    "pk_columns": [
+      "cono",
+      "repairordno",
+      "repairordsuf",
+      "lineno"
+    ],
+    "transaction_columns": []
+  },
+  "pv_swewh": {
+    "pk_columns": [
+      "cono",
+      "recjrnlno",
+      "intclaimno",
+      "swsuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "pv_swewl": {
+    "pk_columns": [
+      "cono",
+      "recjrnlno",
+      "intclaimno",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_swln": {
+    "pk_columns": [
+      "cono",
+      "intclaimno",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_user": {
+    "pk_columns": [
+      "cono",
+      "oper2"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_userfields": {
+    "pk_columns": [
+      "tablename",
+      "fieldname"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pv_wtln": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "pvcontainers": {
+    "pk_columns": [
+      "cono",
+      "oper2",
+      "name",
+      "type"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pvobjects": {
+    "pk_columns": [
+      "cono",
+      "oper2",
+      "name",
+      "objectid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pvregistry": {
+    "pk_columns": [
+      "cono",
+      "Oper",
+      "pvfunction",
+      "Section",
+      "SubSection",
+      "Object",
+      "Keyname"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "pvsassmattr": {
+    "pk_columns": [
+      "menuset",
+      "functionname",
+      "trmgrlang",
+      "objid",
+      "attrid"
+    ],
+    "transaction_columns": []
+  },
+  "pvsassmlink": {
+    "pk_columns": [
+      "menuset",
+      "functionname",
+      "trmgrlang",
+      "objid",
+      "linkid"
+    ],
+    "transaction_columns": []
+  },
+  "pvsassmobj": {
+    "pk_columns": [
+      "menuset",
+      "functionname",
+      "trmgrlang",
+      "parentid",
+      "objid"
+    ],
+    "transaction_columns": []
+  },
+  "recorddelete": {
+    "pk_columns": [
+      "type",
+      "tablename",
+      "srcrowpointer"
+    ],
+    "transaction_columns": [
+      "transdttmz"
+    ]
+  },
+  "recordsync": {
+    "pk_columns": [
+      "cono",
+      "synctype",
+      "tablenm",
+      "key1",
+      "key2",
+      "key3"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "replcontrol": {
+    "pk_columns": [
+      "GroupID",
+      "CodeID",
+      "CodeVal1",
+      "CodeVal2"
+    ],
+    "transaction_columns": []
+  },
+  "replcustdefs": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "replcustflds": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "repldbxref": {
+    "pk_columns": [
+      "SrcDB"
+    ],
+    "transaction_columns": []
+  },
+  "replfieldxref": {
+    "pk_columns": [
+      "SrcDB",
+      "SrcTable",
+      "SrcField"
+    ],
+    "transaction_columns": []
+  },
+  "replicte": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "replproperties": {
+    "pk_columns": [
+      "PropertyName"
+    ],
+    "transaction_columns": []
+  },
+  "replqueue": {
+    "pk_columns": [
+      "Sequence"
+    ],
+    "transaction_columns": []
+  },
+  "repltablexref": {
+    "pk_columns": [
+      "SrcDB",
+      "SrcTable"
+    ],
+    "transaction_columns": []
+  },
+  "return_category": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "rtn_category"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "return_reason": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "type",
+      "code"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "rptdet": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "reportid",
+      "reportname"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "rptmst": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "rsad": {
+    "pk_columns": [
+      "procmatch"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "rsao": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "rses": {
+    "pk_columns": [
+      "queuenm",
+      "startdt",
+      "starttm",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "rssj": {
+    "pk_columns": [
+      "groupnm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "rssjc": {
+    "pk_columns": [
+      "groupnm",
+      "posno",
+      "componentnm",
+      "cono"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "rssq": {
+    "pk_columns": [
+      "queuenm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "rt_type": {
+    "pk_columns": [
+      "code"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "rtdet": {
+    "pk_columns": [
+      "rt_id",
+      "line_num"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "rtdet_status": {
+    "pk_columns": [
+      "code"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "rtmst": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "rt_num"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "rtmst_status": {
+    "pk_columns": [
+      "code"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "rtn_ctn_det": {
+    "pk_columns": [
+      "carton_num",
+      "abs_num"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "rtn_ctn_mst": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "carton_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "sabgl": {
+    "pk_columns": [
+      "cono",
+      "batchnm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sabs": {
+    "pk_columns": [
+      "cono",
+      "batchnm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sadataload": {
+    "pk_columns": [
+      "runid",
+      "record_type",
+      "record_value",
+      "pid"
+    ],
+    "transaction_columns": []
+  },
+  "saindex": {
+    "pk_columns": [
+      "cono",
+      "xtype",
+      "crossref",
+      "prod"
+    ],
+    "transaction_columns": []
+  },
+  "sakeytot": {
+    "pk_columns": [
+      "cono",
+      "xtype",
+      "crossref"
+    ],
+    "transaction_columns": []
+  },
+  "sals": {
+    "pk_columns": [
+      "cono",
+      "langcd",
+      "codeiden",
+      "codeval"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sapb": {
+    "pk_columns": [
+      "cono",
+      "reportnm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sapbc": {
+    "pk_columns": [
+      "cono",
+      "reportnm",
+      "custno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sapbj": {
+    "pk_columns": [
+      "cono",
+      "reportnm",
+      "jrnlno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sapbo": {
+    "pk_columns": [
+      "cono",
+      "reportnm",
+      "orderno",
+      "ordersuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sapbv": {
+    "pk_columns": [
+      "cono",
+      "reportnm",
+      "vendno",
+      "type",
+      "apinvno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "sasapi": {
+    "pk_columns": [
+      "applicationid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasb": {
+    "pk_columns": [
+      "cono",
+      "currproc",
+      "primarykey",
+      "enterdt",
+      "entertm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasc": {
+    "pk_columns": [
+      "cono"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasga": {
+    "pk_columns": [
+      "cono",
+      "tablety",
+      "recty",
+      "taxgroup",
+      "statecd",
+      "countycd",
+      "citycd",
+      "othercd",
+      "addonno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasge": {
+    "pk_columns": [
+      "cono",
+      "custno",
+      "shipto",
+      "state",
+      "taxtype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasgl": {
+    "pk_columns": [
+      "cono",
+      "state",
+      "taxauth"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasgm": {
+    "pk_columns": [
+      "cono",
+      "recty",
+      "taxgroup",
+      "statecd",
+      "countycd",
+      "citycd",
+      "othercd"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasgs": {
+    "pk_columns": [
+      "cono",
+      "state"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasgt": {
+    "pk_columns": [
+      "cono",
+      "tariffcd",
+      "countryoforigin"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasj": {
+    "pk_columns": [
+      "cono",
+      "jrnlno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasjj": {
+    "pk_columns": [
+      "cono",
+      "jrnlno",
+      "apinm"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "sasog": {
+    "pk_columns": [
+      "cono",
+      "oper2",
+      "groupnm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasogh": {
+    "pk_columns": [
+      "cono",
+      "groupnm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasoo": {
+    "pk_columns": [
+      "cono",
+      "oper2"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasos": {
+    "pk_columns": [
+      "cono",
+      "oper2",
+      "menuproc"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasp": {
+    "pk_columns": [
+      "printernm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "saspg": {
+    "pk_columns": [
+      "saspgroup"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasplbl": {
+    "pk_columns": [
+      "printernm",
+      "labeltype"
+    ],
+    "transaction_columns": [
+      "transdttmz"
+    ]
+  },
+  "sasr": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "shipvia",
+      "zone"
+    ],
+    "transaction_columns": [
+      "transcd",
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasse": {
+    "pk_columns": [
+      "errorno",
+      "trmgrlang"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sassi": {
+    "pk_columns": [
+      "File",
+      "Field-nam"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sassm": {
+    "pk_columns": [
+      "currproc",
+      "trmgrlang"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sassp": {
+    "pk_columns": [
+      "areacd"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sassr": {
+    "pk_columns": [
+      "currproc",
+      "trmgrlang"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasst": {
+    "pk_columns": [
+      "zipcd"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasta": {
+    "pk_columns": [
+      "cono",
+      "codeiden",
+      "codeval"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sastae": {
+    "pk_columns": [
+      "cono",
+      "codeiden",
+      "codeval",
+      "codedata"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sastaz": {
+    "pk_columns": [
+      "cono",
+      "codeiden",
+      "primarykey",
+      "secondarykey"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sastc": {
+    "pk_columns": [
+      "cono",
+      "currencyty"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sastch": {
+    "pk_columns": [
+      "cono",
+      "currencyty",
+      "changety",
+      "changedt",
+      "changetm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sastf": {
+    "pk_columns": [
+      "cono",
+      "billlevelcd",
+      "srcrowpointer",
+      "carrierid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sastn": {
+    "pk_columns": [
+      "cono",
+      "codeiden",
+      "codeval"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sastp": {
+    "pk_columns": [
+      "cono",
+      "processno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sastpd": {
+    "pk_columns": [
+      "statusfl",
+      "appname",
+      "deviceid",
+      "appuserid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sastpl": {
+    "pk_columns": [
+      "appname"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sasttcodes": {
+    "pk_columns": [
+      "codeid"
+    ],
+    "transaction_columns": []
+  },
+  "sasz": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "shipvia",
+      "begdestzip",
+      "enddestzip"
+    ],
+    "transaction_columns": [
+      "transcd",
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "seq_control": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "sc_type",
+      "sc_table",
+      "sc_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "serial": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "abs_num",
+      "serial_num"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "serial_history": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "order",
+      "order_suffix",
+      "line",
+      "line_sequence",
+      "serial_num"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "sfcorpgrp": {
+    "pk_columns": [
+      "cono",
+      "groupid",
+      "custno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "shfmst": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "shf_num"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "shpdtl": {
+    "pk_columns": [
+      "tracking_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "shpmst": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "carrier_id",
+      "manifest_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "sled": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sled_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "sledn": {
+    "pk_columns": [
+      "cono",
+      "imptype",
+      "slupdtno",
+      "newpartno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sledv": {
+    "pk_columns": [
+      "cono",
+      "imptype",
+      "slupdtno",
+      "prod",
+      "whse"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sleh": {
+    "pk_columns": [
+      "cono",
+      "statustype",
+      "imptype",
+      "slupdtno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "slsi": {
+    "pk_columns": [
+      "imptype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transfersh",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "slsn": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "slsp": {
+    "pk_columns": [
+      "cono",
+      "imptype",
+      "slgroup",
+      "whse"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "slst": {
+    "pk_columns": [
+      "cono",
+      "codeiden",
+      "codeval"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "smsc": {
+    "pk_columns": [
+      "cono",
+      "yr",
+      "custno",
+      "shipto"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "smseh": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "custno",
+      "shipto"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "smsep": {
+    "pk_columns": [
+      "cono",
+      "yr",
+      "custno",
+      "shipto",
+      "whse",
+      "prodcat"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "smsew": {
+    "pk_columns": [
+      "cono",
+      "yr",
+      "custno",
+      "shipto",
+      "whse",
+      "prod",
+      "stockfl",
+      "componentfl"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "smsm": {
+    "pk_columns": [
+      "cono",
+      "commtype",
+      "slsrep"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "smsn": {
+    "pk_columns": [
+      "cono",
+      "slsrep"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "smsp": {
+    "pk_columns": [
+      "cono",
+      "yr",
+      "prodcat",
+      "whse"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "smss": {
+    "pk_columns": [
+      "cono",
+      "yr",
+      "slsreptype",
+      "slsrep"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "smsv": {
+    "pk_columns": [
+      "cono",
+      "yr",
+      "vendno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "smsvp": {
+    "pk_columns": [
+      "cono",
+      "yr",
+      "vendno",
+      "whse",
+      "prodcat"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "smsvw": {
+    "pk_columns": [
+      "cono",
+      "yr",
+      "vendno",
+      "whse",
+      "prod",
+      "stockfl",
+      "componentfl"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "smsw": {
+    "pk_columns": [
+      "cono",
+      "yr",
+      "whse",
+      "prod",
+      "componentfl",
+      "stockfl"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "stgmst": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "container_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "stntbl": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "stn_num"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "suggested_movement": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "trans_date",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "supplieraccesshdr": {
+    "pk_columns": [
+      "rowpointer"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "supplieraccessresp": {
+    "pk_columns": [
+      "srcrowpointer",
+      "shipprod",
+      "whse",
+      "vendno",
+      "shipfmno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "supplieraccessvend": {
+    "pk_columns": [
+      "srcrowpointer",
+      "shipprod",
+      "whse",
+      "vendno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swao": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swapet": {
+    "pk_columns": [
+      "cono",
+      "jrnlno",
+      "setno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swaudit": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "repairordno",
+      "repairordsuf",
+      "rolineno",
+      "solineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sweh": {
+    "pk_columns": [
+      "cono",
+      "repairordno",
+      "repairordsuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sweht": {
+    "pk_columns": [
+      "cono",
+      "repairordno",
+      "repairordsuf",
+      "tech"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swej": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swel": {
+    "pk_columns": [
+      "cono",
+      "repairordno",
+      "repairordsuf",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swelj": {
+    "pk_columns": [
+      "cono",
+      "origtech",
+      "systemindt",
+      "systemintm",
+      "seqno",
+      "transseqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transseqno",
+      "transtm"
+    ]
+  },
+  "swert": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swewh": {
+    "pk_columns": [
+      "cono",
+      "intclaimno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swewl": {
+    "pk_columns": [
+      "cono",
+      "intclaimno",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swicsd": {
+    "pk_columns": [
+      "cono",
+      "whse"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swicsp": {
+    "pk_columns": [
+      "cono",
+      "prod"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swoeeh": {
+    "pk_columns": [
+      "cono",
+      "orderno",
+      "ordersuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swoeel": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swsb": {
+    "pk_columns": [
+      "cono",
+      "bulletinno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swscc": {
+    "pk_columns": [
+      "cono",
+      "cancelcd"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swscf": {
+    "pk_columns": [
+      "cono",
+      "failcd",
+      "vendno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swscp": {
+    "pk_columns": [
+      "cono",
+      "probfailcd",
+      "vendno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swsct": {
+    "pk_columns": [
+      "cono",
+      "textno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swsj": {
+    "pk_columns": [
+      "cono",
+      "jobtype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swsmsn": {
+    "pk_columns": [
+      "cono",
+      "slsrep"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swsr": {
+    "pk_columns": [
+      "cono",
+      "vendno",
+      "prodline",
+      "prod"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swsse": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swsso": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "tech",
+      "startdt",
+      "schedopttype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swsss": {
+    "pk_columns": [
+      "cono",
+      "tech",
+      "wkstartdt"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swsst": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "technician"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swstt": {
+    "pk_columns": [
+      "cono",
+      "codeiden",
+      "codeval"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swsv": {
+    "pk_columns": [
+      "cono",
+      "vendno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "swsw": {
+    "pk_columns": [
+      "cono",
+      "claimtype"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "sxxmlattr": {
+    "pk_columns": [
+      "docId",
+      "nodeId",
+      "attrNm"
+    ],
+    "transaction_columns": []
+  },
+  "sxxmldoc": {
+    "pk_columns": [
+      "docId"
+    ],
+    "transaction_columns": []
+  },
+  "sxxmlhandler": {
+    "pk_columns": [
+      "docTxnType"
+    ],
+    "transaction_columns": []
+  },
+  "sxxmlnode": {
+    "pk_columns": [
+      "docId",
+      "nodeId"
+    ],
+    "transaction_columns": []
+  },
+  "sxxmlrule": {
+    "pk_columns": [
+      "tradingpartner",
+      "docHandler",
+      "direction",
+      "nodeNm",
+      "attrNm",
+      "ruletype"
+    ],
+    "transaction_columns": []
+  },
+  "syspar_def": {
+    "pk_columns": [
+      "type_id",
+      "parameter_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "syspar_type": {
+    "pk_columns": [
+      "type_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "syspar_value": {
+    "pk_columns": [
+      "parameter_id",
+      "co_num",
+      "wh_num"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "task": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_type",
+      "trans_user"
+    ]
+  },
+  "task_emp": {
+    "pk_columns": [
+      "task_id",
+      "emp_num"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "taxtable": {
+    "pk_columns": [
+      "cono",
+      "sourcecd",
+      "srcrowpointer"
+    ],
+    "transaction_columns": [
+      "transcd",
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "taxtabledtl": {
+    "pk_columns": [
+      "taxrowpointer",
+      "taxgroupno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "tigeocd": {
+    "pk_columns": [
+      "srcrowpointer",
+      "geocd",
+      "city",
+      "zipcd",
+      "addr"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "topic": {
+    "pk_columns": [
+      "Topic-name"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "topic-map": {
+    "pk_columns": [
+      "Object-filename",
+      "Topic-name"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "tot": {
+    "pk_columns": [
+      "cono",
+      "jrnlno",
+      "primarykey",
+      "secondkey"
+    ],
+    "transaction_columns": []
+  },
+  "totgl": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "tqae": {
+    "pk_columns": [
+      "cono",
+      "triggernm",
+      "eventnm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "tqec": {
+    "pk_columns": [
+      "cono",
+      "docty",
+      "orderno",
+      "ordersuf",
+      "cycledt",
+      "cycletm",
+      "recordno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "tqee": {
+    "pk_columns": [
+      "cono",
+      "eventnm",
+      "eventdt",
+      "recordno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "tqse": {
+    "pk_columns": [
+      "eventnm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "tqsf": {
+    "pk_columns": [
+      "filterty",
+      "filternm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "tqsg": {
+    "pk_columns": [
+      "triggernm"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "tqso": {
+    "pk_columns": [
+      "oper2",
+      "codeiden",
+      "codeval"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "tqst": {
+    "pk_columns": [
+      "codeiden",
+      "codeval"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "tqsv": {
+    "pk_columns": [
+      "viewty",
+      "viewnm",
+      "filenm",
+      "name"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "trans_type": {
+    "pk_columns": [
+      "trans_type"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_name",
+      "trans_proc",
+      "trans_type",
+      "trans_user"
+    ]
+  },
+  "transactions": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdttmz",
+      "transmission",
+      "trans_date",
+      "trans_datetz",
+      "trans_link",
+      "trans_num",
+      "trans_proc",
+      "trans_sec_time",
+      "trans_type",
+      "trans_user"
+    ]
+  },
+  "trigger_setup": {
+    "pk_columns": [
+      "triggername"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "twlregistry": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "emp_num",
+      "function",
+      "section",
+      "subsection",
+      "object",
+      "keyname"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "twlvocbreaks": {
+    "pk_columns": [
+      "cono",
+      "seqno",
+      "langcd"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "twlvocfuncs": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "func_num"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "twlvocsettings": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "wh_zone"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "twlvocuser": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "emp_num",
+      "fieldname",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "ud_calc": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "program_name",
+      "proc_name",
+      "section_name",
+      "subsection_name",
+      "udc_type",
+      "udc_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "ud_cfg": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "dept_num",
+      "emp_num",
+      "udc_type",
+      "udc_id"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "udcalc_type": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "udc_type",
+      "udc_activefl"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "udcfg_type": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "uom": {
+    "pk_columns": [
+      "uom"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "vaeh": {
+    "pk_columns": [
+      "cono",
+      "vano",
+      "vasuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "vaeh_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "vaehc": {
+    "pk_columns": [
+      "cono",
+      "vano",
+      "vasuf",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vaelo": {
+    "pk_columns": [
+      "cono",
+      "vano",
+      "vasuf",
+      "lineno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vaes": {
+    "pk_columns": [
+      "cono",
+      "vano",
+      "vasuf",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vaesl": {
+    "pk_columns": [
+      "cono",
+      "vano",
+      "vasuf",
+      "seqno",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vasp": {
+    "pk_columns": [
+      "cono",
+      "shipprod",
+      "whse"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vasps": {
+    "pk_columns": [
+      "cono",
+      "shipprod",
+      "whse",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vaspsa": {
+    "pk_columns": [
+      "cono",
+      "shipprod",
+      "whse"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vaspsas": {
+    "pk_columns": [
+      "cono",
+      "shipprod",
+      "whse",
+      "segment"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vaspsasr": {
+    "pk_columns": [
+      "cono",
+      "shipprod",
+      "whse",
+      "segment",
+      "sequence"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vaspsasrv": {
+    "pk_columns": [
+      "cono",
+      "shipprod",
+      "whse",
+      "verno",
+      "segment",
+      "sequence"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vaspsasv": {
+    "pk_columns": [
+      "cono",
+      "shipprod",
+      "whse",
+      "verno",
+      "segment"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vaspsav": {
+    "pk_columns": [
+      "cono",
+      "shipprod",
+      "whse",
+      "verno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vaspsl": {
+    "pk_columns": [
+      "cono",
+      "shipprod",
+      "whse",
+      "seqno",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vaspslv": {
+    "pk_columns": [
+      "cono",
+      "shipprod",
+      "whse",
+      "verno",
+      "seqno",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vaspsv": {
+    "pk_columns": [
+      "cono",
+      "shipprod",
+      "whse",
+      "verno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vaspv": {
+    "pk_columns": [
+      "cono",
+      "shipprod",
+      "whse",
+      "verno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vast": {
+    "pk_columns": [
+      "cono",
+      "codeiden",
+      "codeval"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vehicle": {
+    "pk_columns": [
+      "cono",
+      "custno",
+      "shipto",
+      "vehicleid"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "vendaddr": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "vendor_id",
+      "vend_addr_num"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "venddetail": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "vendor_id",
+      "vend_item"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "venmst": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "vendor_id"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "viewer": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "wave": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "batch"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "webcono": {
+    "pk_columns": [
+      "login",
+      "cono"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "webextension": {
+    "pk_columns": [
+      "rowpointer"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "weblogin": {
+    "pk_columns": [
+      "login"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "webmodification": {
+    "pk_columns": [
+      "rowpointer"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "webnote": {
+    "pk_columns": [
+      "rowpointer"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "webregestry": {
+    "pk_columns": [
+      "CoNo",
+      "login",
+      "function",
+      "section",
+      "subsection",
+      "keyname"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "websetting": {
+    "pk_columns": [
+      "cono",
+      "profile",
+      "operator",
+      "functionname",
+      "screenname",
+      "settingname"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "wh_zone": {
+    "pk_columns": [
+      "co_num",
+      "wh_num",
+      "pick_sequence"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "whmst": {
+    "pk_columns": [
+      "co_num",
+      "wh_num"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "wlal": {
+    "pk_columns": [
+      "wlloc"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "wlao": {
+    "pk_columns": [
+      "cono"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "wleh": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "setno",
+      "ordertype",
+      "orderno",
+      "ordersuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transid",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "wlel": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "setno",
+      "ordertype",
+      "orderno",
+      "ordersuf",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transid",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "wlelk": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "setno",
+      "ordertype",
+      "orderno",
+      "ordersuf",
+      "lineno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transid",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "wlels": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "setno",
+      "ordertype",
+      "orderno",
+      "ordersuf",
+      "lineno",
+      "seqno",
+      "serlottype",
+      "serlotno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transid",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "wlem": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "setno",
+      "field1",
+      "field2"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transid",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "wlet": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "setno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transid",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "wlicsw": {
+    "pk_columns": [
+      "cono",
+      "prod",
+      "whse"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "wllicense": {
+    "pk_columns": [
+      "appname"
+    ],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "wlpasswd": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "trans_date",
+      "trans_datetz",
+      "trans_proc",
+      "trans_user"
+    ]
+  },
+  "wmet": {
+    "pk_columns": [],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "wmsb": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "binloc"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "wmsbp": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "binloc",
+      "prod"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "wmsc": {
+    "pk_columns": [
+      "cono",
+      "whse",
+      "sizetype",
+      "prod"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "wmst": {
+    "pk_columns": [
+      "cono",
+      "codeiden",
+      "codeval"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "worktallies": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "wteh": {
+    "pk_columns": [
+      "wtno",
+      "wtsuf"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "wteh_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "wtel": {
+    "pk_columns": [
+      "wtno",
+      "wtsuf",
+      "lineno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "wtel_index": {
+    "pk_columns": [
+      "srcrowpointer"
+    ],
+    "transaction_columns": []
+  },
+  "wtelo": {
+    "pk_columns": [
+      "wtno",
+      "wtsuf",
+      "lineno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "wterah": {
+    "pk_columns": [
+      "cono",
+      "reportno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm",
+      "transtype"
+    ]
+  },
+  "wteral": {
+    "pk_columns": [
+      "cono",
+      "reportno",
+      "lineno",
+      "seqno"
+    ],
+    "transaction_columns": [
+      "transdt",
+      "transdttmz",
+      "transproc",
+      "transtm"
+    ]
+  },
+  "wtsa": {
+    "pk_columns": [
+      "cono",
+      "shipfmrowpointer",
+      "cono2",
+      "shiptorowpointer",
+      "recordtype",
+      "srcrowpointer"
+    ],
+    "transaction_columns": [
+      "transdttmz",
+      "transproc"
+    ]
+  },
+  "XL_instance": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "XL_Language": {
+    "pk_columns": [
+      "lang_name"
+    ],
+    "transaction_columns": []
+  },
+  "XL_string_info": {
+    "pk_columns": [],
+    "transaction_columns": []
+  },
+  "XL_translation": {
+    "pk_columns": [
+      "sequence_num",
+      "instance_num",
+      "lang_name"
+    ],
+    "transaction_columns": [
+      "trans_string"
+    ]
+  }
+}

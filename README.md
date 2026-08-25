@@ -127,6 +127,35 @@ WHERE description LIKE "%customer%account%"
 ORDER BY module_code, table_name;
 ```
 
+### Export Primary Unique Keys and `trans*` Columns
+
+Use the rich annotation SQLite artifact to export primary unique key columns and
+normalized `trans*` field availability by table:
+
+```powershell
+uv run python .\scripts\export_primary_unique_keys.py `
+  --simple `
+  --input .\data\sqlite\annotations_rich_20260526_094055.db `
+  --output .\out\primary_unique_keys_and_trans_columns.json
+```
+
+Or as a single shell-neutral line:
+
+```bash
+uv run python scripts/export_primary_unique_keys.py --simple --input data/sqlite/annotations_rich_20260526_094055.db --output out/primary_unique_keys_and_trans_columns.json
+```
+
+The simple JSON is keyed by table name:
+
+```json
+{
+  "icsw": {
+    "pk_columns": ["cono", "prod", "whse"],
+    "transaction_columns": ["transdt", "transdttmz", "transproc", "transtm", "transunit"]
+  }
+}
+```
+
 ---
 
 ## OpenMetadata Loader
